@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "system")
+@Table(name = "environment")
 //@AllArgsConstructor
 //@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
