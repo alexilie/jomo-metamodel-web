@@ -5,6 +5,8 @@ import com.jomo.eorganism.metamodel.web.service.ComponentService;
 import com.jomo.eorganism.metamodel.web.service.DatabaseService;
 import com.jomo.eorganism.metamodel.web.service.SystemService;
 import com.jomo.eorganism.metamodel.web.service.DomainService;
+import com.jomo.eorganism.metamodel.web.service.ReleaseService;
+import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ public class MetamodelWebController {
     private DatabaseService databaseService;
     private DomainService domainService;
     private SystemService systemService;
+    private ReleaseService releaseService;
+    private EnvironmentService environmentService;
 
     @Autowired
     public void setApplicationService(ApplicationService applicationService) { this.applicationService = applicationService; }
@@ -39,6 +43,15 @@ public class MetamodelWebController {
     @Autowired
     public void setSystemService(SystemService systemService) {
         this.systemService = systemService;
+    }
+
+    @Autowired
+    public void setReleaseService(ReleaseService releaseService) {
+        this.releaseService = releaseService;
+    }
+
+    @Autowired
+    public void setEnvironmentService(EnvironmentService environmentService) {  this.environmentService = environmentService;
     }
 
     @GetMapping("/applications")
@@ -70,5 +83,14 @@ public class MetamodelWebController {
         model.addAttribute("systems", systemService.listSystems());
         return "systems";
     }
-
+    @GetMapping("/releases")
+    public String retrieveReleases(Model model){
+        model.addAttribute("releases", releaseService.listReleases());
+        return "releases";
+    }
+    @GetMapping("/environments")
+    public String retrieveEnvironments(Model model){
+        model.addAttribute("environments", environmentService.listEnvironments());
+        return "environments";
+    }
 }
