@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.jomo.metamodel.web</groupId>
+	<artifactId>jomo-metamodel-web-app</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>jomo-metamodel-web-app</name>
+	<description>Metamodel Web GUI Application</description>
+
+	<properties>
+			<java.version>1.8</java.version>
+			<kotlin.version>1.5.0</kotlin.version>
+			<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+			<applicationEntity.name>Spring Boot Metamodel Web GUI Application</applicationEntity.name>
+			<applicationEntity.version>1.0.0-SNAPSHOT</applicationEntity.version>
+			<hibernate.types.5.version>2.9.13</hibernate.types.5.version>
+			<postgresql.version>42.2.14</postgresql.version>
+			<liquibase.version>4.0.0</liquibase.version>
+			<lombok.version>1.18.12</lombok.version>
+			<guava.version>30.1.1-jre</guava.version>
+			<jcalendar.version>1.4</jcalendar.version>
+			<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+			<checkstyle.plugin.version>3.1.0</checkstyle.plugin.version>
+			<findbugs.maven.plugin.version>3.0.5</findbugs.maven.plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>com.vladmihalcea</groupId>
+			<artifactId>hibernate-types-5</artifactId>
+			<version>${hibernate.types.5.version}</version>
+		</dependency>
+		<!--PostGreSQL Database-->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+		<!--Spring Boot Data JPA-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--H2 in memory Java Database
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>-->
+		<!--Spring Boot ThymeLeaf-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>5.3.23</version>
+		</dependency>
+		<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
