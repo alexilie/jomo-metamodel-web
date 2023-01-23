@@ -20,6 +20,9 @@
         <th scope="col">Name</th>
         <th scope="col">Type</th>
         <th scope="col">Description</th>
+        <th scope="col">Uuid</th>
+        <th scope="col">Created</th>
+        <th scope="col">Updated</th>
 
     </tr>
     </thead>
@@ -30,6 +33,9 @@
         <td th:text="${item.name}"></td>
         <td th:text="${item.type}"></td>
         <td th:text="${item.description}"></td>
+        <td th:text="${item.uuid}"></td>
+        <td th:text="${item.createdDate}"></td>
+        <td th:text="${item.lastUpdatedDate}"></td>
     </tr>
     </tbody>
 </table>

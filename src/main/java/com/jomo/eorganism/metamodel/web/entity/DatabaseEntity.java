@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 
 @Entity
 @Table(name = "database")
@@ -15,6 +16,7 @@ import java.util.Date;
 //@Setter
 public class DatabaseEntity extends BaseEntity {
 
+    private String uuid;
     private Long domainId;
     private Long systemId;
     private Long environmentId;
@@ -80,19 +82,43 @@ public class DatabaseEntity extends BaseEntity {
     private Date createdDate;
     private Date lastUpdatedDate;
 
-    public DatabaseEntity(){
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public DatabaseEntity(String _name, String _type, String _description){
-        name        = _name;
-        type        = _type;
-        description = _description;
+    public Date getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public void setLastUpdatedDate(Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public DatabaseEntity() {
+    }
+
+    public DatabaseEntity(String name, String type, String description) {
+        this.uuid        = MetamodelUtil.getUuidRandomString();
+        this.metadataType = "DATABASE";
+        this.lastUpdatedApplicationName = "Metamodel Web";
+        this.lastUpdatedUserName = "eorganism";
+        this.name        = name;
+        this.type        = type;
+        this.description = description;
+        this.createdDate = new java.util.Date();
+        this.lastUpdatedDate = new java.util.Date();
     }
 
     @Override
     public String toString() {
-        return "Database{" +
-                ", domainId=" + domainId +
+        return "DatabaseEntity{" + '\'' +
+                super.toString() + '\'' +
+                "uuid=" + uuid +
+                "domainId=" + domainId +
                 ", systemId=" + systemId +
                 ", environmentId=" + environmentId +
                 ", releaseId=" + releaseId +

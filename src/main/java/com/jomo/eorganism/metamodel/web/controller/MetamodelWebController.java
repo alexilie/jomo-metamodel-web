@@ -7,6 +7,7 @@ import com.jomo.eorganism.metamodel.web.service.SystemService;
 import com.jomo.eorganism.metamodel.web.service.DomainService;
 import com.jomo.eorganism.metamodel.web.service.ReleaseService;
 import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
+import com.jomo.eorganism.metamodel.web.service.MetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,7 @@ public class MetamodelWebController {
     private SystemService systemService;
     private ReleaseService releaseService;
     private EnvironmentService environmentService;
+    private MetadataService metadataService;
 
     @Autowired
     public void setApplicationService(ApplicationService applicationService) { this.applicationService = applicationService; }
@@ -52,6 +54,10 @@ public class MetamodelWebController {
 
     @Autowired
     public void setEnvironmentService(EnvironmentService environmentService) {  this.environmentService = environmentService;
+    }
+
+    @Autowired
+    public void setMetamodelService(MetadataService metadataService) {  this.metadataService = metadataService;
     }
 
     @GetMapping("/applications")
@@ -92,5 +98,11 @@ public class MetamodelWebController {
     public String retrieveEnvironments(Model model){
         model.addAttribute("environments", environmentService.listEnvironments());
         return "environments";
+    }
+
+    @GetMapping("/metadatas")
+    public String retrieveMetadatas(Model model){
+        model.addAttribute("metadatas", metadataService.listMetadatas());
+        return "metadatas";
     }
 }

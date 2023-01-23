@@ -5,16 +5,25 @@ import com.jomo.eorganism.metamodel.web.entity.ComponentEntity;
 import com.jomo.eorganism.metamodel.web.entity.DatabaseEntity;
 import com.jomo.eorganism.metamodel.web.entity.DomainEntity;
 import com.jomo.eorganism.metamodel.web.entity.SystemEntity;
+import com.jomo.eorganism.metamodel.web.entity.ReleaseEntity;
+import com.jomo.eorganism.metamodel.web.entity.EnvironmentEntity;
+import com.jomo.eorganism.metamodel.web.entity.MetadataEntity;
 import com.jomo.eorganism.metamodel.web.exception.ApplicationNotFoundException;
 import com.jomo.eorganism.metamodel.web.exception.ComponentNotFoundException;
 import com.jomo.eorganism.metamodel.web.exception.DatabaseNotFoundException;
 import com.jomo.eorganism.metamodel.web.exception.DomainNotFoundException;
 import com.jomo.eorganism.metamodel.web.exception.SystemNotFoundException;
+import com.jomo.eorganism.metamodel.web.exception.ReleaseNotFoundException;
+import com.jomo.eorganism.metamodel.web.exception.EnvironmentNotFoundException;
+import com.jomo.eorganism.metamodel.web.exception.MetadataNotFoundException;
 import com.jomo.eorganism.metamodel.web.service.ApplicationService;
 import com.jomo.eorganism.metamodel.web.service.ComponentService;
 import com.jomo.eorganism.metamodel.web.service.DatabaseService;
 import com.jomo.eorganism.metamodel.web.service.DomainService;
 import com.jomo.eorganism.metamodel.web.service.SystemService;
+import com.jomo.eorganism.metamodel.web.service.ReleaseService;
+import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
+import com.jomo.eorganism.metamodel.web.service.MetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +43,9 @@ public class MetamodelWebRestController {
     private ComponentService componentService;
     private DomainService domainService;
     private SystemService systemService;
+    private ReleaseService releaseService;
+    private EnvironmentService environmentService;
+    private MetadataService metadataService;
 
     @Autowired
     public void setApplicationService(ApplicationService applicationService) { this.applicationService = applicationService; }
@@ -54,9 +66,16 @@ public class MetamodelWebRestController {
     }
 
     @Autowired
-    public void setSystemService(SystemService systemService) {
-        this.systemService = systemService;
-    }
+    public void setSystemService(SystemService systemService) { this.systemService = systemService; }
+
+    @Autowired
+    public void setReleaseService(ReleaseService releaseService) { this.releaseService = releaseService; }
+
+    @Autowired
+    public void setEnvironmentService(EnvironmentService environmentService) { this.environmentService = environmentService; }
+
+    @Autowired
+    public void setMetadataService(MetadataService metadataService) { this.metadataService = metadataService; }
 
     @GetMapping("/applications")
     public ResponseEntity<List<ApplicationEntity>> getAllApplications() {
@@ -154,6 +173,68 @@ public class MetamodelWebRestController {
             return new ResponseEntity<SystemEntity>(systemService.findSystem(id), HttpStatus.OK);
         } catch (SystemNotFoundException exception) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "System Not Found");
+        }
+    }
+
+    @GetMapping("/releases")
+    public ResponseEntity<List<ReleaseEntity>> getAllReleases() {
+        try{
+            List<ReleaseEntity> releaseEntityList = (List<ReleaseEntity>) releaseService.listReleases();
+            return new ResponseEntity<List<ReleaseEntity>>(releaseEntityList, HttpStatus.OK);
+        }  catch (ReleaseNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Releases Not Found");
+        }
+
+    }
+
+    @GetMapping("/releases/{id}")
+    public ResponseEntity<ReleaseEntity> getRelease(@PathVariable("id") Integer id) {
+        try {
+            return new ResponseEntity<ReleaseEntity>(releaseService.findRelease(id), HttpStatus.OK);
+        } catch (ReleaseNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Release Not Found");
+        }
+    }
+
+    //environments
+    @GetMapping("/environments")
+    public ResponseEntity<List<EnvironmentEntity>> getAllEnvironments() {
+        try{
+            List<EnvironmentEntity> environmentEntityList = (List<EnvironmentEntity>) environmentService.listEnvironments();
+            return new ResponseEntity<List<EnvironmentEntity>>(environmentEntityList, HttpStatus.OK);
+        }  catch (EnvironmentNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Environments Not Found");
+        }
+
+    }
+
+    @GetMapping("/environments/{id}")
+    public ResponseEntity<EnvironmentEntity> getEnvironment(@PathVariable("id") Integer id) {
+        try {
+            return new ResponseEntity<EnvironmentEntity>(environmentService.findEnvironment(id), HttpStatus.OK);
+        } catch (EnvironmentNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Environment Not Found");
+        }
+    }
+
+    //metadatas
+    @GetMapping("/metadatas")
+    public ResponseEntity<List<MetadataEntity>> getAllMetadatas() {
+        try{
+            List<MetadataEntity> metadataEntityList = (List<MetadataEntity>) metadataService.listMetadatas();
+            return new ResponseEntity<List<MetadataEntity>>(metadataEntityList, HttpStatus.OK);
+        }  catch (MetadataNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Metadatas Not Found");
+        }
+
+    }
+
+    @GetMapping("/metadatas/{id}")
+    public ResponseEntity<MetadataEntity> getMetadata(@PathVariable("id") Integer id) {
+        try {
+            return new ResponseEntity<MetadataEntity>(metadataService.findMetadata(id), HttpStatus.OK);
+        } catch (MetadataNotFoundException exception) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Metadata Not Found");
         }
     }
 }

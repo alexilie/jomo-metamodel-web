@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "system")
@@ -13,17 +16,32 @@ import javax.persistence.Table;
 @Getter
 //@Setter
 public class SystemEntity extends BaseEntity {
-
+    private String uuid;
     private Long domainId;
+    private Long metadataId;
+    private Long lastUpdatedUserId;
+    private Long lastUpdatedApplicationId;
+
     private String name;
     private String type;
     private String description;
     private String status;
+
     private String inventoryName;
     private String shortName;
     private String longName;
     private String code;
     private String classification;
+
+    private String eorganismName;
+    private String segmentName;
+    private String metadataName;
+    private String metadataType;
+
+    private String lastUpdatedUserName;
+    private String lastUpdatedApplicationName;
+    private Date createdDate;
+    private Date lastUpdatedDate;
 
     public Long getDomainId() {
         return domainId;
@@ -33,19 +51,46 @@ public class SystemEntity extends BaseEntity {
         this.domainId = domainId;
     }
 
-    public SystemEntity(){
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public SystemEntity(String _name, String _type, String _description){
-        name        = _name;
-        type        = _type;
-        description = _description;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public void setLastUpdatedDate(Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public SystemEntity() {
+    }
+
+    public SystemEntity(String name, String type, String description) {
+        this.uuid        = MetamodelUtil.getUuidRandomString();
+        this.metadataType = "SYSTEM";
+        this.lastUpdatedApplicationName = "Metamodel Web";
+        this.lastUpdatedUserName = "eorganism";
+        this.name        = name;
+        this.type        = type;
+        this.description = description;
+        this.createdDate = new java.util.Date();
+        this.lastUpdatedDate = new java.util.Date();
     }
 
     @Override
     public String toString() {
         return "SystemEntity{" +
+                super.toString() + '\'' +
+                "uuid=" + uuid +
                 "domainId=" + domainId +
+                ", metadataId=" + metadataId +
+                ", lastUpdatedUserId=" + lastUpdatedUserId +
+                ", lastUpdatedApplicationId=" + lastUpdatedApplicationId +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
@@ -55,6 +100,14 @@ public class SystemEntity extends BaseEntity {
                 ", longName='" + longName + '\'' +
                 ", code='" + code + '\'' +
                 ", classification='" + classification + '\'' +
+                ", eorganismName='" + eorganismName + '\'' +
+                ", segmentName='" + segmentName + '\'' +
+                ", metadataName='" + metadataName + '\'' +
+                ", metadataType='" + metadataType + '\'' +
+                ", lastUpdatedUserName='" + lastUpdatedUserName + '\'' +
+                ", lastUpdatedApplicationName='" + lastUpdatedApplicationName + '\'' +
+                ", createdDate=" + createdDate +
+                ", lastUpdatedDate=" + lastUpdatedDate +
                 '}';
     }
 }

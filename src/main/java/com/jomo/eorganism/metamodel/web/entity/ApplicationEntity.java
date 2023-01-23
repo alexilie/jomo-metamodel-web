@@ -7,12 +7,15 @@ import lombok.Getter;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
+
 @Entity
 @Table(name = "application")
 //@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 //@Setter
 public class ApplicationEntity extends BaseEntity {
+    private String uuid;
 
     private Long domainId;
     private Long systemId;
@@ -27,6 +30,7 @@ public class ApplicationEntity extends BaseEntity {
     private Long businessUnitId;
     private Long eapplicationId;
     private Long lastUpdatedUserId;
+    private Long lastUpdatedApplicationId;
 
     private String environmentName;
     private String releaseName;
@@ -67,23 +71,110 @@ public class ApplicationEntity extends BaseEntity {
 
     private String lastUpdatedUserName;
     private String lastUpdatedApplicationName;
-    private Long lastUpdatedApplicationId;
     private Date createdDate;
     private Date lastUpdatedDate;
 
-    public ApplicationEntity(){
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public ApplicationEntity(String _name, String _type, String _description){
-        name        = _name;
-        type        = _type;
-        description = _description;
+    public Date getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public void setLastUpdatedDate(Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public Long getMetadataId() {
+        return metadataId;
+    }
+
+    public void setMetadataId(Long metadataId) {
+        this.metadataId = metadataId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getMetadataName() {
+        return metadataName;
+    }
+
+    public void setMetadataName(String metadataName) {
+        this.metadataName = metadataName;
+    }
+
+    public String getMetadataType() {
+        return metadataType;
+    }
+
+    public void setMetadataType(String metadataType) {
+        this.metadataType = metadataType;
+    }
+
+    public String getLastUpdatedUserName() {
+        return lastUpdatedUserName;
+    }
+
+    public void setLastUpdatedUserName(String lastUpdatedUserName) {
+        this.lastUpdatedUserName = lastUpdatedUserName;
+    }
+
+    public String getLastUpdatedApplicationName() {
+        return lastUpdatedApplicationName;
+    }
+
+    public void setLastUpdatedApplicationName(String lastUpdatedApplicationName) {
+        this.lastUpdatedApplicationName = lastUpdatedApplicationName;
+    }
+
+    public ApplicationEntity() {
+    }
+
+    public ApplicationEntity(String name, String type, String description) {
+        this.uuid        = MetamodelUtil.getUuidRandomString();
+        this.metadataType = "APPLICATION";
+        this.lastUpdatedApplicationName = "Metamodel Web";
+        this.lastUpdatedUserName = "eorganism";
+        this.name        = name;
+        this.type        = type;
+        this.description = description;
+        this.createdDate = new java.util.Date();
+        this.lastUpdatedDate = new java.util.Date();
     }
 
     @Override
     public String toString() {
-        return "Application{" +
-                ", domainId=" + domainId +
+        return "ApplicationEntity{" + '\'' +
+                super.toString() + '\'' +
+                "uuid=" + uuid +
+                "domainId=" + domainId +
                 ", systemId=" + systemId +
                 ", environmentId=" + environmentId +
                 ", releaseId=" + releaseId +

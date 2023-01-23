@@ -20,4 +20,11 @@ public abstract class BaseEntity implements Serializable {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" + '\'' +
+                "id=" + id + '\'' +
+                '}';
+    }
 }

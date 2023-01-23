@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 
+import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
+
 @Entity
 @Table(name = "component")
 //@AllArgsConstructor
@@ -15,6 +17,7 @@ import java.util.Date;
 //@Setter
 public class ComponentEntity extends BaseEntity {
 
+    private String uuid;
     private Long applicationId;
     private Long eorganismId;
     private Long metadataId;
@@ -49,6 +52,14 @@ public class ComponentEntity extends BaseEntity {
     private Date createdDate;
     private Date lastUpdatedDate;
 
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public Date getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
     public Long getApplicationId() {
         return applicationId;
     }
@@ -57,19 +68,35 @@ public class ComponentEntity extends BaseEntity {
         this.applicationId = applicationId;
     }
 
-    public ComponentEntity(){
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public ComponentEntity(String _name, String _type, String _description){
-        name        = _name;
-        type        = _type;
-        description = _description;
+    public void setLastUpdatedDate(Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public ComponentEntity() {
+    }
+
+    public ComponentEntity(String name, String type, String description) {
+        this.uuid        = MetamodelUtil.getUuidRandomString();
+        this.metadataType = "COMPONENT";
+        this.lastUpdatedApplicationName = "Metamodel Web";
+        this.lastUpdatedUserName = "eorganism";
+        this.name        = name;
+        this.type        = type;
+        this.description = description;
+        this.createdDate = new java.util.Date();
+        this.lastUpdatedDate = new java.util.Date();
     }
 
     @Override
     public String toString() {
-        return "Component{" +
-                ", applicationId=" + applicationId +
+        return "ComponentEntity{" + '\'' +
+                super.toString() + '\'' +
+                "uuid=" + uuid +
+                "applicationId=" + applicationId +
                 ", eorganismId=" + eorganismId +
                 ", metadataId=" + metadataId +
                 ", lastUpdatedUserId=" + lastUpdatedUserId +
@@ -84,7 +111,7 @@ public class ComponentEntity extends BaseEntity {
                 ", longName='" + longName + '\'' +
                 ", code='" + code + '\'' +
                 ", classification='" + classification + '\'' +
-                ", eorganismName='" + eorganismName + '\'' +
+                ", eorganismName=" + eorganismName +
                 ", taxonomy='" + taxonomy + '\'' +
                 ", topology='" + topology + '\'' +
                 ", graphPath='" + graphPath + '\'' +
