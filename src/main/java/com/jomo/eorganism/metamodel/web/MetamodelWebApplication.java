@@ -115,6 +115,41 @@ public class MetamodelWebApplication {
 			metadataEntityWorker.setLastUpdatedApplicationName(applicationEntityWorker.getLastUpdatedApplicationName());
 			metadataEntityWorker.setLastUpdatedUserName(applicationEntityWorker.getLastUpdatedUserName());
 
+			metadataRepository.save(metadataEntityWorker);
+			//reset
+			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+
+			metadataEntityWorker.setName(componentEntityWorker.getName());
+			metadataEntityWorker.setType(componentEntityWorker.getMetadataType());
+			metadataEntityWorker.setDescription(componentEntityWorker.getDescription());
+			metadataEntityWorker.setOriginalId(componentEntityWorker.getId());
+			metadataEntityWorker.setLastUpdatedApplicationName(componentEntityWorker.getLastUpdatedApplicationName());
+			metadataEntityWorker.setLastUpdatedUserName(componentEntityWorker.getLastUpdatedUserName());
+
+			//reset
+			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+
+			metadataEntityWorker.setName(databaseEntityWorker.getName());
+			metadataEntityWorker.setType(databaseEntityWorker.getMetadataType());
+			metadataEntityWorker.setDescription(databaseEntityWorker.getDescription());
+			metadataEntityWorker.setOriginalId(databaseEntityWorker.getId());
+			metadataEntityWorker.setLastUpdatedApplicationName(databaseEntityWorker.getLastUpdatedApplicationName());
+			metadataEntityWorker.setLastUpdatedUserName(databaseEntityWorker.getLastUpdatedUserName());
+
+			metadataRepository.save(metadataEntityWorker);
+
+			//reset
+			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+
+			metadataEntityWorker.setName(systemEntityWorker.getName());
+			metadataEntityWorker.setType(systemEntityWorker.getMetadataType());
+			metadataEntityWorker.setDescription(systemEntityWorker.getDescription());
+			metadataEntityWorker.setOriginalId(systemEntityWorker.getId());
+			metadataEntityWorker.setLastUpdatedApplicationName(systemEntityWorker.getLastUpdatedApplicationName());
+			metadataEntityWorker.setLastUpdatedUserName(systemEntityWorker.getLastUpdatedUserName());
+
+			metadataRepository.save(metadataEntityWorker);
+
 			for (ReleaseEntity releaseEntity : releaseRepository.findAll()) {
 				log.info("The release is: " + releaseEntity.toString());
 			}

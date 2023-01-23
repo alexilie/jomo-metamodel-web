@@ -76,6 +76,54 @@ public class ComponentEntity extends BaseEntity {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLastUpdatedUserName() {
+        return lastUpdatedUserName;
+    }
+
+    public void setLastUpdatedUserName(String lastUpdatedUserName) {
+        this.lastUpdatedUserName = lastUpdatedUserName;
+    }
+
+    public String getLastUpdatedApplicationName() {
+        return lastUpdatedApplicationName;
+    }
+
+    public void setLastUpdatedApplicationName(String lastUpdatedApplicationName) {
+        this.lastUpdatedApplicationName = lastUpdatedApplicationName;
+    }
+
+    public String getMetadataType() {
+        return metadataType;
+    }
+
+    public void setMetadataType(String metadataType) {
+        this.metadataType = metadataType;
+    }
+
     public ComponentEntity() {
     }
 
