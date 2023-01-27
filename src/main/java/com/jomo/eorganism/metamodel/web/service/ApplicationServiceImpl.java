@@ -28,4 +28,15 @@ public class ApplicationServiceImpl implements ApplicationService {
             throw new ApplicationNotFoundException("Application Not Found");
     }
 
+    @Override
+    public ApplicationEntity addApplication(ApplicationEntity applicationEntity){
+        applicationRepository.save(applicationEntity);
+        return applicationEntity;
+    }
+
+    @Override
+    public void deleteById(long id) {
+        applicationRepository.findById(id).ifPresent(e -> applicationRepository.delete(e));
+    }
+
 }

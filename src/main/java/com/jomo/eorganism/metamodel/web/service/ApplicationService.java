@@ -10,6 +10,12 @@ public interface ApplicationService {
 
     @TransactionalReadOnly
     ApplicationEntity findApplication(long id);
+
+    @TransactionalWrite
+    ApplicationEntity addApplication(ApplicationEntity applicationEntity);
+
+    @TransactionalWrite
+    void deleteById(long id);
 }
 
 

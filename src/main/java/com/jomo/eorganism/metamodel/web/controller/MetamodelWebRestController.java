@@ -24,19 +24,19 @@ import com.jomo.eorganism.metamodel.web.service.SystemService;
 import com.jomo.eorganism.metamodel.web.service.ReleaseService;
 import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
 import com.jomo.eorganism.metamodel.web.service.MetadataService;
+import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/metamodel")
+@AllArgsConstructor
 public class MetamodelWebRestController {
     private ApplicationService applicationService;
     private DatabaseService databaseService;
@@ -78,6 +78,8 @@ public class MetamodelWebRestController {
     public void setMetadataService(MetadataService metadataService) { this.metadataService = metadataService; }
 
     @GetMapping("/applications")
+    @ApiOperation("Get All Applications")
+    @ResponseStatus(code = HttpStatus.OK)
     public ResponseEntity<List<ApplicationEntity>> getAllApplications() {
         try {
             List<ApplicationEntity> applicationEntityList = (List<ApplicationEntity>) applicationService.listApplications();
@@ -88,6 +90,8 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/applications/{id}")
+    @ApiOperation("Get Application using id")
+    @ResponseStatus(code = HttpStatus.OK)
     public ResponseEntity<ApplicationEntity> getApplication(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<ApplicationEntity>(applicationService.findApplication(id), HttpStatus.OK);
@@ -96,7 +100,30 @@ public class MetamodelWebRestController {
         }
     }
 
+    @PostMapping("/applications")
+    @ApiOperation("Add Application")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public ApplicationEntity addApplication(@RequestBody ApplicationEntity application) {
+        try {
+            return applicationService.addApplication(application);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Exception adding Application error is:  "+ e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/applications/{id}")
+    @ApiOperation("Delete Applications based in Id")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void deleteApplication(@PathVariable("id") String id) {
+        try {
+            applicationService.deleteById(Integer.parseInt(id));
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Exception deleting Application id: " + id + "; error is:  "+ e.getMessage());
+        }
+    }
+
     @GetMapping("/components")
+    @ApiOperation("Get All Components")
     public ResponseEntity<List<ComponentEntity>> getAllComponents() {
         try {
             List<ComponentEntity> componentEntityList = (List<ComponentEntity>) componentService.listComponents();
@@ -108,6 +135,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/components/{id}")
+    @ApiOperation("Get Component using id")
     public ResponseEntity<ComponentEntity> getComponent(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<ComponentEntity>(componentService.findComponent(id), HttpStatus.OK);
@@ -117,6 +145,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/databases")
+    @ApiOperation("Get All Databases")
     public ResponseEntity<List<DatabaseEntity>> getAllDatabases() {
         try {
             List<DatabaseEntity> databaseEntityList = (List<DatabaseEntity>) databaseService.listDatabases();
@@ -128,6 +157,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/databases/{id}")
+    @ApiOperation("Get Database using id")
     public ResponseEntity<DatabaseEntity> getDatabase(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<DatabaseEntity>(databaseService.findDatabase(id), HttpStatus.OK);
@@ -137,6 +167,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/domains")
+    @ApiOperation("Get Domains")
     public ResponseEntity<List<DomainEntity>> getAllDomains() {
         try {
             List<DomainEntity> domainEntityList = (List<DomainEntity>) domainService.listDomains();
@@ -148,6 +179,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/domains/{id}")
+    @ApiOperation("Get Domain using id")
     public ResponseEntity<DomainEntity> getDomain(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<DomainEntity>(domainService.findDomain(id), HttpStatus.OK);
@@ -157,6 +189,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/systems")
+    @ApiOperation("Get All Systems")
     public ResponseEntity<List<SystemEntity>> getAllSystems() {
         try{
             List<SystemEntity> systemEntityList = (List<SystemEntity>) systemService.listSystems();
@@ -168,6 +201,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/systems/{id}")
+    @ApiOperation("Get System using id")
     public ResponseEntity<SystemEntity> getSystem(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<SystemEntity>(systemService.findSystem(id), HttpStatus.OK);
@@ -177,6 +211,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/releases")
+    @ApiOperation("Get All Releases")
     public ResponseEntity<List<ReleaseEntity>> getAllReleases() {
         try{
             List<ReleaseEntity> releaseEntityList = (List<ReleaseEntity>) releaseService.listReleases();
@@ -188,6 +223,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/releases/{id}")
+    @ApiOperation("Get Release using id")
     public ResponseEntity<ReleaseEntity> getRelease(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<ReleaseEntity>(releaseService.findRelease(id), HttpStatus.OK);
@@ -198,6 +234,7 @@ public class MetamodelWebRestController {
 
     //environments
     @GetMapping("/environments")
+    @ApiOperation("Get All Environments")
     public ResponseEntity<List<EnvironmentEntity>> getAllEnvironments() {
         try{
             List<EnvironmentEntity> environmentEntityList = (List<EnvironmentEntity>) environmentService.listEnvironments();
@@ -209,6 +246,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/environments/{id}")
+    @ApiOperation("Get Environment using id")
     public ResponseEntity<EnvironmentEntity> getEnvironment(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<EnvironmentEntity>(environmentService.findEnvironment(id), HttpStatus.OK);
@@ -219,6 +257,7 @@ public class MetamodelWebRestController {
 
     //metadatas
     @GetMapping("/metadatas")
+    @ApiOperation("Get All Metadatas")
     public ResponseEntity<List<MetadataEntity>> getAllMetadatas() {
         try{
             List<MetadataEntity> metadataEntityList = (List<MetadataEntity>) metadataService.listMetadatas();
@@ -230,6 +269,7 @@ public class MetamodelWebRestController {
     }
 
     @GetMapping("/metadatas/{id}")
+    @ApiOperation("Get Metadata using id")
     public ResponseEntity<MetadataEntity> getMetadata(@PathVariable("id") Integer id) {
         try {
             return new ResponseEntity<MetadataEntity>(metadataService.findMetadata(id), HttpStatus.OK);
