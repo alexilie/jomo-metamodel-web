@@ -105,4 +105,14 @@ public class MetamodelWebController {
         model.addAttribute("metadatas", metadataService.listMetadatas());
         return "metadatas";
     }
+
+    @GetMapping("/search")
+    public String retrieveSearch(){
+        return "search";
+    }
+
+    @GetMapping("/documentation")
+    public String retrieveDocumentation(){
+        return "documentation";
+    }
 }
