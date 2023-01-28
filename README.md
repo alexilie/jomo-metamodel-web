@@ -51,8 +51,6 @@ The project is built using Java, Spring Boot, Hibernate, Liquibase.
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-1.PNG "Screen 1")
 
 3. Go to your local "Projects" folder e.g. C:\Projects\
-## GitHub project  | screen
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-3.PNG "Screen 3")
 
 4. Open a Windows Command line program; change directory to intended C:\Projects folder - > cd C:\Projects
 
@@ -65,26 +63,29 @@ The project is built using Java, Spring Boot, Hibernate, Liquibase.
 
 * Observation - GitHub repository can be downloaded as ZIP archive as well; or can be downloaded using GitHub desktop or any other Git Client 
 
-7. To build from Windows CMD line: from project folder execute Maven build command-  C:\Projects\jomo-metamodel-web > mvn clean install
+8. To build from Windows CMD line: from project folder execute Maven build command-  C:\Projects\jomo-metamodel-web > mvn clean install
 
 ## Maven build command | screen
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-3.PNG "Screen 3")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-4.PNG "Screen 4")
 
 ## Maven build command | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-5.PNG "Screen 5")
 
-## Maven build command | screen
+9. For convenience Open IntelliJ IDE (or other IDE) and opne Project from following location C:\Projects\jomo-metamodel-web > mvn clean install
+## IntelliJ IDE jomo-metamodel-web App | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-7.PNG "Screen 7")
 
 8. Maven build script will generate auto-executable JAR Java archive in the target subfolder -  jomo-metamodel-web-app-0.0.1-SNAPSHOT
 ## Maven build artifacts in target folder  | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-6.PNG "Screen 6")
 
-## Running the application
+## Running the Spring-boot jomo-metamodel-web as Web App inside Tomcat App server
 #### On Windows
 
 9. To execute from Windows CMD line: > mvn spring-boot:run 
-
+you can use any Maven commands 
 ```
 C:\Projects\jomo-metamodel-web > mvn spring-boot:run
 
@@ -129,18 +130,19 @@ Swagger UI - http://localhost:8080/swagger-ui/index.html
 | Open API 3.0 YAML| http://localhost:8080/swagger-ui/index.html         | 
 | Actuator         | http://localhost:8080/actuator                      | 
 | Applications API | http://localhost:8080/api/v1/metamodel/applications | 
-| Components API   | http://localhost:8080/api/v1/metamodel/applications |  
-| Databases API    | http://localhost:8080/api/v1/metamodel/applications |  
-| Domains API      | http://localhost:8080/api/v1/metamodel/applications |  
-| Environments API | http://localhost:8080/api/v1/metamodel/applications |   
-| Releases API     | http://localhost:8080/api/v1/metamodel/applications |   
-| Releases API     | http://localhost:8080/api/v1/metamodel/applications |   
+| Components API   | http://localhost:8080/api/v1/metamodel/components |  
+| Databases API    | http://localhost:8080/api/v1/metamodel/databases |  
+| Domains API      | http://localhost:8080/api/v1/metamodel/domains |  
+| Environments API | http://localhost:8080/api/v1/metamodel/environments |   
+| Releases API     | http://localhost:8080/api/v1/metamodel/releases |   
+| Metadatas API     | http://localhost:8080/api/v1/metamodel/metadatas |   
 
-## Accessing the REST API directly using CURL from Windows CMD line
+## Database configuration - | screen
+* Observation - For PostGreSQL; database must be created, user must be created and password must be setup; user permission must be setup as well - READ, WRITE 
+Database:    eorganism_web
+DB user:     eorganism_web
+DB password: alex1900 |
 
-## Accessing the REST API directly using PostMan 
-
-## Database user
 | JDBC URL                                      | Username         	| Password         |
 |----------------------------------------------	|------------------	|----------------- |
 | jdbc:postgresql://localhost:5555/eorganism_web| eorganism_web     | alex1900 |
@@ -152,6 +154,29 @@ Swagger UI - http://localhost:8080/swagger-ui/index.html
 
 ## Database ERD Model
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-19.png "Screen 19")
+
+## Accessing the REST API GET operations directly in the browser | screens
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-20.PNG "Screen 20")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-21.PNG "Screen 21")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-22.PNG "Screen 22")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-23.PNG "Screen 23")\
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-24.PNG "Screen 24")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-25.PNG "Screen 25")
+
+## Accessing the Spring Boot Actuator | screen
+Actuator Health Info - http://localhost:8080/actuator
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-26.PNG "Screen 26")
+
+## Accessing the OpenAPI 3.0 YAML specification - Swagger REST API interfaces specs | screen
+OpenAPI 3.0 YAML specification - http://localhost:8080/v3/api-docs
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-27.PNG "Screen 27")
+
+
+## Accessing the REST API directly using CURL from Windows CMD line
+TO DO
+
+## Accessing the REST API directly using PostMan 
+TO DO
 
 
 
