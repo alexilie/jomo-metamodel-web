@@ -12,11 +12,26 @@ This is a project with separate Technology based capabilities & Functional servi
 
 The project is built using Java, Spring Boot, Hibernate, Liquibase.
 
+## Credits and related project
+This Project is build using few resources:
+1. Daniel Michalski Liquibase related project code: https://github.com/DanielMichalski/spring-boot-java-swing-reservations
+https://danielmichalski.com/
+https://github.com/danielmichalski
+
+2. Trackzilla Application for TheymeLeaf, REST API
+Github Trackzilla Application URL
+
+3. Jomo EOrganism Metamodel Swing Application - Entity Model, DB model : https://github.com/alexilie/spring-boot-swing-metamodel
+
+4. Jomo Static Web site - for rendering ReadMe.md documentation images from external website: https://github.com/alexilie/jomo-static-website
+
+
 ## Table of Contents
 * [Prerequisites](#prerequisites)
 * [Libraries](#libraries)
 * [Running the application](#running-the-application)
     * [On Windows](#on-windows)
+    * [On Mac](#on-mac) - to do
 * [Database user](#database-user)
 * [Screens](#screens)
 
