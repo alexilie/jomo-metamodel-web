@@ -46,23 +46,23 @@ The project is built using Java, Spring Boot, Hibernate, Liquibase.
 #### On Windows
 
 9. To execute from Windows CMD line: > mvn clean install 
-```bash
+
+```
 C:\Projects\jomo-metamodel-web > mvn spring-boot:run
-```
-or
-```bash
+
 C:\Projects\jomo-metamodel-web > mvnw.cmd spring-boot:run
-```
-or
-```bash
+
 C:\Projects\jomo-metamodel-web > java -jar target/jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar
 ```
-or
-```bash
+
+
+```
 C:\Projects\jomo-metamodel-web\target > java -jar jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar 
 ```
 
-This will start Tomcat embedded server on port 8080, and will execute jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar insoide tomcat as Web Application 
+This will start Tomcat embedded server on port 8080, and will execute jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar inside Tomcat as Web Application 
+
+https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-1.png
 
 ## Accessing the Web application in the browser
 http://localhost:8080/
@@ -98,3 +98,46 @@ Swagger UI - http://localhost:8080/swagger-ui/index.html
 ## Database Screens
 
 ## Database ERD Model
+
+## Screens
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-1.png "Screen 1")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-2.png "Screen 2")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-3.png "Screen 3")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-4.png "Screen 4")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-5.png "Screen 5")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-6.png "Screen 6")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-7.png "Screen 7")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-8.png "Screen 8")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-9.png "Screen 9")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-10.png "Screen 10")
+
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-11.png "Screen 11")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.png "Screen 12")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-13.png "Screen 13")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-14.png "Screen 14")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-15.png "Screen 15")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-16.png "Screen 16")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-17.png "Screen 17")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-18.png "Screen 18")
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-19.png "Screen 19")
+
+
+
