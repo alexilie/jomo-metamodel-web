@@ -173,7 +173,11 @@ OpenAPI 3.0 YAML specification - http://localhost:8080/v3/api-docs
 
 
 ## Accessing the REST API directly using CURL from Windows CMD line
-TO DO
+Invoking metadatas REST API using CURL from CMD Command line - getting all - http://localhost:8080/api/v1/metamodel/metadatas
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-28.PNG "Screen 28")
+
+Invoking metadatas REST API using CURL from CMD Command line - getting one - http://localhost:8080/api/v1/metamodel/metadatas
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-29.PNG "Screen 29")
 
 ## Accessing the REST API directly using PostMan 
 TO DO
