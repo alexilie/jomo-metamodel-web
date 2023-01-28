@@ -111,6 +111,18 @@ public class MetamodelWebRestController {
         }
     }
 
+    @PutMapping("/applications/{id}")
+    @ApiOperation("Update Application using id")
+    @ResponseStatus(code = HttpStatus.OK)
+    public ResponseEntity<ApplicationEntity> update(@RequestBody ApplicationEntity updateApplicationEntity, @PathVariable("id") Integer id) {
+        final ApplicationEntity updatedApplication = applicationService.updateById(id, updateApplicationEntity);
+        if (updatedApplication == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(updatedApplication);
+        }
+    }
+
     @DeleteMapping("/applications/{id}")
     @ApiOperation("Delete Applications based in Id")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)

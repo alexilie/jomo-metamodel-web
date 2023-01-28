@@ -39,4 +39,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         applicationRepository.findById(id).ifPresent(e -> applicationRepository.delete(e));
     }
 
+    @Override
+    public ApplicationEntity updateById(long id, ApplicationEntity applicationEntity) {
+        applicationRepository.findById(id).ifPresent(e -> applicationRepository.save(applicationEntity));
+        return applicationEntity;
+    }
+
 }

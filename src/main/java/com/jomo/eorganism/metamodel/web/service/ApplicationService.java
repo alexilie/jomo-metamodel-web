@@ -16,6 +16,9 @@ public interface ApplicationService {
 
     @TransactionalWrite
     void deleteById(long id);
+
+    @TransactionalWrite
+    ApplicationEntity updateById(long id, ApplicationEntity applicationEntity);
 }
 
 
