@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
+
     @Autowired
     private ApplicationRepository applicationRepository;
 
@@ -33,6 +34,17 @@ public class ApplicationServiceImpl implements ApplicationService {
         applicationRepository.save(applicationEntity);
         return applicationEntity;
     }
+
+    /*
+    @Override
+    public void addApplicationArray(<ApplicationEntity> applicationEntityArray){
+
+        for(ApplicationEntity applicationEntityWorker: applicationEntityArray) {
+            addApplication(applicationEntityWorker);
+        }
+        return;
+    }
+    */
 
     @Override
     public void deleteById(long id) {

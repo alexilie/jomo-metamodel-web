@@ -14,6 +14,8 @@ public interface ApplicationService {
     @TransactionalWrite
     ApplicationEntity addApplication(ApplicationEntity applicationEntity);
 
+    //void addApplicationArray(<ApplicationEntity> applicationEntityArray);
+
     @TransactionalWrite
     void deleteById(long id);
 
