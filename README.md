@@ -133,16 +133,12 @@ http://localhost:8080/
 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-15.PNG "Screen 15")
 
-## Accessing the Swagger UI interfaces in the browser | screen
-Swagger UI - http://localhost:8080/swagger-ui/index.html
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-16.PNG "Screen 16")
-
 ## Accessing the App, App Resources & REST API resources | screen
 | Resource        |  URL         	                                     |          |
 |------------------------------------------------------------------------|----------|---------- |
 | App Home         | http://localhost:8080                               | 
-| Swagger UI       | http://localhost:8080/swagger-ui/index.html         | 
-| Open API 3.0 YAML| http://localhost:8080/swagger-ui/index.html         | 
+| Swagger UI       | http://localhost:8080/swagger-ui/index.html       | 
+| Open API 3.0 YAML| http://localhost:8080/v3/api-docs        | 
 | Actuator         | http://localhost:8080/actuator                      | 
 | Applications API | http://localhost:8080/api/v1/metamodel/applications | 
 | Components API   | http://localhost:8080/api/v1/metamodel/components |  
@@ -178,20 +174,27 @@ DB password: alex1900 |
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-24.PNG "Screen 24")
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-25.PNG "Screen 25")
 
+## Accessing the Swagger UI interfaces in the browser | screen
+Swagger UI - http://localhost:8080/swagger-ui/index.html
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-16.PNG "Screen 16")
+
 ## Accessing the Spring Boot Actuator | screen
 Actuator Health Info - http://localhost:8080/actuator
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-26.PNG "Screen 26")
 
 ## Accessing the OpenAPI 3.0 YAML specification - Swagger REST API interfaces specs | screen
-OpenAPI 3.0 YAML specification - http://localhost:8080/v3/api-docs
+OpenAPI 3.0 YAML specification | from app - http://localhost:8080/v3/api-docs
+OpenAPI 3.0 YAML specification | remote- https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/api-docs.yaml
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-27.PNG "Screen 27")
 
 
 ## Accessing the REST API directly using CURL from Windows CMD line
 Invoking metadatas REST API using CURL from CMD Command line - getting all - http://localhost:8080/api/v1/metamodel/metadatas
+curl HTTP GET http://localhost:8080/api/v1/metamodel/metadatas
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-28.PNG "Screen 28")
 
-Invoking metadatas REST API using CURL from CMD Command line - getting one - http://localhost:8080/api/v1/metamodel/metadatas
+Invoking metadatas REST API using CURL from CMD Command line - getting one - http://localhost:8080/api/v1/metamodel/metadatas/50
+curl HTTP GET http://localhost:8080/api/v1/metamodel/metadatas/50
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-29.PNG "Screen 29")
 
 ## Accessing the REST API directly using PostMan 
