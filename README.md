@@ -22,6 +22,17 @@ The project is built using Java, Spring Boot, Hibernate, Liquibase.
 
 ## Prerequisites
 - [Java JDK](https://www.oracle.com/pl/java/technologies/javase-downloads.html) version 8+
+- Java JRE ()
+- Maven 
+- GitHub
+- PostGreSQL 
+- H2 Java DB - in memory DB (Optional)
+- IntelliJ 
+- Eclipse (Optional) 
+- VisualSource code (Optional) 
+- GitHub Desktop (optional)
+- Windows OS based computer/ laptop
+- Mac OS based computer/ laptop (optional)
 
 ## Libraries
 | Library name                                                                                                     | Description                                                                                                                          |
@@ -35,36 +46,44 @@ The project is built using Java, Spring Boot, Hibernate, Liquibase.
 ## Getting the application source and files from GitHub; build local project
 1. Please go to the following GitHub project https://github.com/alexilie/jomo-metamodel-web
 2. Copy the Git project command https://github.com/alexilie/jomo-metamodel-web.git
-3. Go to your local "Projects" folder e.g. C:\Projects\
 
-## Screens
+## GitHub project  | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-1.PNG "Screen 1")
-## Screens
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-2.PNG "Screen 2")
-## Screens
+
+3. Go to your local "Projects" folder e.g. C:\Projects\
+## GitHub project  | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-3.PNG "Screen 3")
 
 4. Open a Windows Command line program; change directory to intended C:\Projects folder - > cd C:\Projects
-5. New folder "jomo-metamodel-web" will be automatically created in the "Projects" folder
-6. Change directory to intended new created folder "jomo-metamodel-web" > cd jomo-metamodel-web
-7. To build from Windows CMD line: from project folder execute -  C:\Projects\jomo-metamodel-web > mvn clean install
 
-## Screens
+5. Copy the Github project repository using Git CMD command line> C:\Projects> git clone https://github.com/alexilie/jomo-metamodel-web.git
+## Git Clone command  - copy repository | screen
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-2.PNG "Screen 2")
+
+6. New folder "jomo-metamodel-web" will be automatically created in the "Projects" folder
+7. Change directory to intended new created folder "jomo-metamodel-web" > cd jomo-metamodel-web
+
+* Observation - GitHub repository can be downloaded as ZIP archive as well; or can be downloaded using GitHub desktop or any other Git Client 
+
+7. To build from Windows CMD line: from project folder execute Maven build command-  C:\Projects\jomo-metamodel-web > mvn clean install
+
+## Maven build command | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-4.PNG "Screen 4")
-## Screens
+
+## Maven build command | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-5.PNG "Screen 5")
-## Screens
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-6.PNG "Screen 6")
-## Screens
+
+## Maven build command | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-7.PNG "Screen 7")
 
-
 8. Maven build script will generate auto-executable JAR Java archive in the target subfolder -  jomo-metamodel-web-app-0.0.1-SNAPSHOT
+## Maven build artifacts in target folder  | screen
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-6.PNG "Screen 6")
 
 ## Running the application
 #### On Windows
 
-9. To execute from Windows CMD line: > spring-boot:run 
+9. To execute from Windows CMD line: > mvn spring-boot:run 
 
 ```
 C:\Projects\jomo-metamodel-web > mvn spring-boot:run
@@ -78,17 +97,17 @@ C:\Projects\jomo-metamodel-web\target > java -jar jomo-metamodel-web-app-0.0.1-S
 
 This will start Tomcat embedded server on port 8080, and will execute jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar inside Tomcat as Web Application 
 
-## Screens
+## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-8.PNG "Screen 8")
-## Screens
+## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-9.PNG "Screen 9")
-## Screens
+## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-10.PNG "Screen 10")
-
-
-## Accessing the Web application in the browser
-http://localhost:8080/
+## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-11.PNG "Screen 11")
+
+## Accessing the Web application in the browser | screen
+http://localhost:8080/
 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.PNG "Screen 12")
 
@@ -98,12 +117,11 @@ http://localhost:8080/
 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-15.PNG "Screen 15")
 
-
-## Accessing the Swagger UI interfaces in the browser
+## Accessing the Swagger UI interfaces in the browser | screen
 Swagger UI - http://localhost:8080/swagger-ui/index.html
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-16.PNG "Screen 16")
 
-## Accessing the Resources & REST API 
+## Accessing the App, App Resources & REST API resources | screen
 | Resource        |  URL         	                                     |          |
 |------------------------------------------------------------------------|----------|---------- |
 | App Home         | http://localhost:8080                               | 
