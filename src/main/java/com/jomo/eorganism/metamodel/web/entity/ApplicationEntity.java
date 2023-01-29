@@ -154,6 +154,326 @@ public class ApplicationEntity extends BaseEntity {
         this.lastUpdatedApplicationName = lastUpdatedApplicationName;
     }
 
+    public Integer getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(Integer domainId) {
+        this.domainId = domainId;
+    }
+
+    public Integer getSystemId() {
+        return systemId;
+    }
+
+    public void setSystemId(Integer systemId) {
+        this.systemId = systemId;
+    }
+
+    public Integer getEnvironmentId() {
+        return environmentId;
+    }
+
+    public void setEnvironmentId(Integer environmentId) {
+        this.environmentId = environmentId;
+    }
+
+    public Integer getReleaseId() {
+        return releaseId;
+    }
+
+    public void setReleaseId(Integer releaseId) {
+        this.releaseId = releaseId;
+    }
+
+    public Integer getApplicationProfileId() {
+        return applicationProfileId;
+    }
+
+    public void setApplicationProfileId(Integer applicationProfileId) {
+        this.applicationProfileId = applicationProfileId;
+    }
+
+    public Integer getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public Integer getEorganismId() {
+        return eorganismId;
+    }
+
+    public void setEorganismId(Integer eorganismId) {
+        this.eorganismId = eorganismId;
+    }
+
+    public Integer getSupportGroupId() {
+        return supportGroupId;
+    }
+
+    public void setSupportGroupId(Integer supportGroupId) {
+        this.supportGroupId = supportGroupId;
+    }
+
+    public Integer getSegmentId() {
+        return segmentId;
+    }
+
+    public void setSegmentId(Integer segmentId) {
+        this.segmentId = segmentId;
+    }
+
+    public Integer getBusinessUnitId() {
+        return businessUnitId;
+    }
+
+    public void setBusinessUnitId(Integer businessUnitId) {
+        this.businessUnitId = businessUnitId;
+    }
+
+    public Integer getEapplicationId() {
+        return eapplicationId;
+    }
+
+    public void setEapplicationId(Integer eapplicationId) {
+        this.eapplicationId = eapplicationId;
+    }
+
+    public Integer getLastUpdatedUserId() {
+        return lastUpdatedUserId;
+    }
+
+    public void setLastUpdatedUserId(Integer lastUpdatedUserId) {
+        this.lastUpdatedUserId = lastUpdatedUserId;
+    }
+
+    public Integer getLastUpdatedApplicationId() {
+        return lastUpdatedApplicationId;
+    }
+
+    public void setLastUpdatedApplicationId(Integer lastUpdatedApplicationId) {
+        this.lastUpdatedApplicationId = lastUpdatedApplicationId;
+    }
+
+    public String getEnvironmentName() {
+        return environmentName;
+    }
+
+    public void setEnvironmentName(String environmentName) {
+        this.environmentName = environmentName;
+    }
+
+    public String getReleaseName() {
+        return releaseName;
+    }
+
+    public void setReleaseName(String releaseName) {
+        this.releaseName = releaseName;
+    }
+
+    public String getDomainName() {
+        return domainName;
+    }
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    public String getSystemName() {
+        return systemName;
+    }
+
+    public void setSystemName(String systemName) {
+        this.systemName = systemName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getInventoryName() {
+        return inventoryName;
+    }
+
+    public void setInventoryName(String inventoryName) {
+        this.inventoryName = inventoryName;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public void setLongName(String longName) {
+        this.longName = longName;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getClassification() {
+        return classification;
+    }
+
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public String getSupportGroupName() {
+        return supportGroupName;
+    }
+
+    public void setSupportGroupName(String supportGroupName) {
+        this.supportGroupName = supportGroupName;
+    }
+
+    public String getSupportGroupEmail() {
+        return supportGroupEmail;
+    }
+
+    public void setSupportGroupEmail(String supportGroupEmail) {
+        this.supportGroupEmail = supportGroupEmail;
+    }
+
+    public String getEapplicationName() {
+        return eapplicationName;
+    }
+
+    public void setEapplicationName(String eapplicationName) {
+        this.eapplicationName = eapplicationName;
+    }
+
+    public String getApplicationProfileName() {
+        return applicationProfileName;
+    }
+
+    public void setApplicationProfileName(String applicationProfileName) {
+        this.applicationProfileName = applicationProfileName;
+    }
+
+    public String getApplicationIdInput() {
+        return applicationIdInput;
+    }
+
+    public void setApplicationIdInput(String applicationIdInput) {
+        this.applicationIdInput = applicationIdInput;
+    }
+
+    public String getApplicationIdInputName() {
+        return applicationIdInputName;
+    }
+
+    public void setApplicationIdInputName(String applicationIdInputName) {
+        this.applicationIdInputName = applicationIdInputName;
+    }
+
+    public String getApplicationIdOutput() {
+        return applicationIdOutput;
+    }
+
+    public void setApplicationIdOutput(String applicationIdOutput) {
+        this.applicationIdOutput = applicationIdOutput;
+    }
+
+    public String getApplicationIdOutputName() {
+        return applicationIdOutputName;
+    }
+
+    public void setApplicationIdOutputName(String applicationIdOutputName) {
+        this.applicationIdOutputName = applicationIdOutputName;
+    }
+
+    public String getEorganismName() {
+        return eorganismName;
+    }
+
+    public void setEorganismName(String eorganismName) {
+        this.eorganismName = eorganismName;
+    }
+
+    public String getTaxonomy() {
+        return taxonomy;
+    }
+
+    public void setTaxonomy(String taxonomy) {
+        this.taxonomy = taxonomy;
+    }
+
+    public String getTopology() {
+        return topology;
+    }
+
+    public void setTopology(String topology) {
+        this.topology = topology;
+    }
+
+    public String getGraphPath() {
+        return graphPath;
+    }
+
+    public void setGraphPath(String graphPath) {
+        this.graphPath = graphPath;
+    }
+
+    public String getSegmentName() {
+        return segmentName;
+    }
+
+    public void setSegmentName(String segmentName) {
+        this.segmentName = segmentName;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
+    public String getBusinessUnitName() {
+        return businessUnitName;
+    }
+
+    public void setBusinessUnitName(String businessUnitName) {
+        this.businessUnitName = businessUnitName;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public ApplicationEntity() {
     }
 

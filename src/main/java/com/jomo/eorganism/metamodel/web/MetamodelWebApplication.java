@@ -31,8 +31,8 @@ public class MetamodelWebApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MetamodelWebApplication.class, args);
-		java.lang.System.out.println("Hello MetamodelWebApplication!");
-		java.lang.System.out.println("######Jomo MetamodelWebApplication is UP and RUNNING#####");
+		log.info("Hello MetamodelWebApplication!");
+		log.info("######Jomo MetamodelWebApplication is UP and RUNNING#####");
 	}
 
 	@Bean
@@ -57,13 +57,47 @@ public class MetamodelWebApplication {
 
 			//insert some mockup data
 			int i = 0;
-			for (i = 1; i < 100; i++) {
+			for (i = 1; i < 500; i++) {
 
 					try {
 						//1
 						applicationEntityWorker = new ApplicationEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Defect tracking Application for tracking bugs" + "ONE:" + i);
-
-						componentEntityWorker = new ComponentEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Web GUI Admin component" + "ONE:" + i);
+						applicationEntityWorker.setDomainId(1);
+						applicationEntityWorker.setReleaseId(1);
+						applicationEntityWorker.setSegmentId(1);
+						applicationEntityWorker.setEnvironmentId(1);
+						applicationEntityWorker.setApplicationProfileId(1);
+						applicationEntityWorker.setOwnerId(1);
+						applicationEntityWorker.setEorganismId(1);
+						applicationEntityWorker.setSystemId(1);
+						applicationEntityWorker.setMetadataId(1);
+						applicationEntityWorker.setBusinessUnitId(1);
+						applicationEntityWorker.setLastUpdatedUserId(1);
+						applicationEntityWorker.setLastUpdatedApplicationId(1);
+						applicationEntityWorker.setSupportGroupId(1);
+						applicationEntityWorker.setDomainName("Domain Name"+ "ONE:" + i);
+						applicationEntityWorker.setSegmentName("Segment Name"+ "ONE:" + i);
+						applicationEntityWorker.setEnvironmentName("Environment Name"+ "ONE:" + i);
+						applicationEntityWorker.setOwnerName("Environment Name"+ "ONE:" + i);
+						applicationEntityWorker.setReleaseName("Release Name"+ "ONE:" + i);
+						applicationEntityWorker.setMetadataName("Metadata Name"+ "ONE:" + i);
+						applicationEntityWorker.setSystemName("System Name"+ "ONE:" + i);
+						applicationEntityWorker.setStatus("Status ACTIVE "+ "ONE:" + i);
+						applicationEntityWorker.setVersion("Version 1.0 ACTIVE "+ "ONE:" + i);
+						applicationEntityWorker.setCode("CODE PROD "+ "ONE:" + i);
+						applicationEntityWorker.setClassification("Classification PROD "+ "ONE:" + i);
+  						applicationEntityWorker.setSupportGroupName("Support Group Name PROD "+ "ONE:" + i);
+						applicationEntityWorker.setSupportGroupEmail("support@abc.com "+ "TWO:" + i);
+						applicationEntityWorker.setApplicationIdInputName("ApplicationIdInputName "+ "ONE:" + i);
+						applicationEntityWorker.setApplicationIdOutput("ApplicationIdOutput "+ "TWO:" + i);
+						applicationEntityWorker.setApplicationIdOutputName("ApplicationIdOutputName "+ "ONE:" + i);
+						applicationEntityWorker.setEorganismName("EorganismName "+ "ONE:" + i);
+						applicationEntityWorker.setTopology("Topology "+ "ONE:" + i);
+						applicationEntityWorker.setTaxonomy("Taxonomy "+ "ONE:" + i);
+						applicationEntityWorker.setGraphPath("ORGANIZATION >> COMPANY >> BUSINESS UNIT >> WEALTH"+ "ONE:" + i);
+						applicationEntityWorker.setServiceCode("ServiceCode "+ "ONE:" + i);
+						applicationEntityWorker.setBusinessUnitName("BusinessUnitName "+ "ONE:" + i);
+   						componentEntityWorker = new ComponentEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Web GUI Admin component" + "ONE:" + i);
 						databaseEntityWorker = new DatabaseEntity("Jomo Metamodel Database" + "ONE:" + i, "Oracle Cloud" + "ONE:" + i, "Jomo Metamodel Database" + "ONE:" + i);
 						domainEntityWorker = new DomainEntity("Billing Domain", "Billing" + "ONE:" + i, "Business Banking Billing Domain" + "ONE:" + i);
 						systemEntityWorker = new SystemEntity("CRM", "Critical" + "ONE:" + i, "CRM Customer Relationship System" + "ONE:" + i);
@@ -92,10 +126,42 @@ public class MetamodelWebApplication {
 
 						metadataRepository.save(metadataEntityWorker);
 
-						//reset
-
-						//2
+						//reset 2
 						applicationEntityWorker = new ApplicationEntity("EOrganism Connector" + "TWO:" + i, "Code Generator" + "TWO:" + i, "EOrganism Connector Source Code Generator from Metamodel" + "TWO:" + i);
+						applicationEntityWorker.setDomainId(1);
+						applicationEntityWorker.setReleaseId(1);
+						applicationEntityWorker.setSegmentId(1);
+						applicationEntityWorker.setEnvironmentId(1);
+						applicationEntityWorker.setApplicationProfileId(1);
+						applicationEntityWorker.setOwnerId(1);
+						applicationEntityWorker.setEorganismId(1);
+						applicationEntityWorker.setSystemId(1);
+						applicationEntityWorker.setMetadataId(1);
+						applicationEntityWorker.setBusinessUnitId(1);
+						applicationEntityWorker.setLastUpdatedUserId(1);
+						applicationEntityWorker.setLastUpdatedApplicationId(1);
+						applicationEntityWorker.setDomainName("Domain Name"+ "TWO:" + i);
+						applicationEntityWorker.setSegmentName("Segment Name"+ "TWO:" + i);
+						applicationEntityWorker.setEnvironmentName("Environment Name"+ "TWO:" + i);
+						applicationEntityWorker.setOwnerName("Environment Name"+ "TWO:" + i);
+						applicationEntityWorker.setReleaseName("Release Name"+ "TWO:" + i);
+						applicationEntityWorker.setMetadataName("Metadata Name"+ "TWO:" + i);
+						applicationEntityWorker.setSystemName("System Name"+ "TWO:" + i);
+						applicationEntityWorker.setStatus("Status ACTIVE "+ "TWO:" + i);
+						applicationEntityWorker.setVersion("Version 1.0 ACTIVE "+ "TWO:" + i);
+						applicationEntityWorker.setCode("CODE PROD "+ "ONE:" + i);
+						applicationEntityWorker.setClassification("Classification PROD "+ "TWO:" + i);
+						applicationEntityWorker.setSupportGroupName("Support Group Name PROD "+ "TWO:" + i);
+						applicationEntityWorker.setSupportGroupEmail("support@abc.com "+ "TWO:" + i);
+						applicationEntityWorker.setApplicationIdInputName("ApplicationIdInputName "+ "TWO:" + i);
+						applicationEntityWorker.setApplicationIdOutput("ApplicationIdOutput "+ "TWO:" + i);
+						applicationEntityWorker.setApplicationIdOutputName("ApplicationIdOutputName "+ "TWO:" + i);
+						applicationEntityWorker.setEorganismName("EorganismName "+ "TWO:" + i);
+						applicationEntityWorker.setTopology("Topology "+ "TWO:" + i);
+						applicationEntityWorker.setTaxonomy("Taxonomy "+ "TWO:" + i);
+						applicationEntityWorker.setGraphPath("ORGANIZATION >> COMPANY >> BUSINESS UNIT >> WEALTH"+ "TWO:" + i);
+						applicationEntityWorker.setServiceCode("ServiceCode "+ "TWO:" + i);
+						applicationEntityWorker.setBusinessUnitName("BusinessUnitName "+ "TWO:" + i);
 
 						componentEntityWorker = new ComponentEntity("EOrganism Connector Swing GUI" + "TWO:" + i, "Java Swing GUI App" + "TWO:" + i, "EOrganism Connector Swing GUI, Java Swing GUI App" + "TWO:" + i);
 						databaseEntityWorker = new DatabaseEntity("EOrganism Connector Database" + "TWO:" + i, "My SQL" + "TWO:" + i, "Jomo Metamodel Database" + "TWO:" + i);
@@ -126,14 +192,14 @@ public class MetamodelWebApplication {
 
 						metadataRepository.save(metadataEntityWorker);
 
-
 					} catch (Exception e) {
 						log.info("CommandLineRunner Exception " + e.toString());
 
 					}
-
+						log.info("CommandLineRunner load data OK- i  " + i);
 				}// outer for i
 
+				log.info("######Jomo MetamodelWebApplication CommandLineRunner Loaded all mockup data#####");
 					/*
 					try {
 

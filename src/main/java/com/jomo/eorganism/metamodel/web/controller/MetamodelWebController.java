@@ -11,7 +11,10 @@ import com.jomo.eorganism.metamodel.web.service.MetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MetamodelWebController {
@@ -63,6 +66,24 @@ public class MetamodelWebController {
     @GetMapping("/applications")
     public String retrieveApplications(Model model){
         model.addAttribute("applications", applicationService.listApplications());
+        return "applications";
+    }
+
+    @PostMapping("/applications")
+    public String addApplication(Model model){
+         //model.addAttribute("applications", applicationService.newApplication());
+         return "applications";
+    }
+
+
+    @DeleteMapping("/applications")
+    public String deleteApplication(Model model){
+        //model.addAttribute("applications", applicationService.deleteApplication());
+        return "applications";
+    }
+
+    @PatchMapping("/applications")
+    public String retrieveApplications(){
         return "applications";
     }
 
