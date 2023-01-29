@@ -27,6 +27,8 @@
                     <th scope="col">Environment</th>
                     <th scope="col">Created</th>
                     <th scope="col">Updated</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,6 +45,8 @@
                     <td th:text="${item.environmentName}"></td>
                     <td th:text="${item.createdDate}"></td>
                     <td th:text="${item.lastUpdatedDate}"></td>
+                    <td><button class="btn btn-outline-success my-2 my-sm-0" href="/applications/edit/${item.id}" type="submit">Edit</button></td>
+                    <td><button class="btn btn-outline-success my-2 my-sm-0" href="/applications/delete/${item.id}" type="submit">Delete</button></td>
                    <!-- <td th:text="${item.component}"></td>-->
                 </tr>
                 </tbody>

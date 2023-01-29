@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Metamodel</a>
+    <a class="navbar-brand" href="/">Jomo Metamodel</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,8 +12,9 @@
                     Applications
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarAppMenuLink">
-                    <a class="dropdown-item" href="/applications">View</a>
-                    <a class="dropdown-item" href="/applications/new">Create</a>
+                    <a class="dropdown-item" href="/applications">View Applications</a>
+                    <a class="dropdown-item" href="/applications/add">Add Application</a>
+                    <a class="dropdown-item" href="/applications/search">Search Application</a>
                 </div>
             </li>
             <!-- Components-->
@@ -22,8 +23,9 @@
                     Components
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarCompMenuLink">
-                    <a class="dropdown-item" href="/components">View</a>
-                    <a class="dropdown-item" href="/components/new">Create</a>
+                    <a class="dropdown-item" href="/components">View Components</a>
+                    <a class="dropdown-item" href="/components/add">Add Component</a>
+                    <a class="dropdown-item" href="/components/search">Search Component</a>
                 </div>
             </li>
             <!-- Databases-->
@@ -32,8 +34,9 @@
                     Databases
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDbMenuLink">
-                    <a class="dropdown-item" href="/databases">View</a>
-                    <a class="dropdown-item" href="/databases/new">Create</a>
+                    <a class="dropdown-item" href="/databases">View Databases</a>
+                    <a class="dropdown-item" href="/databases/add">Add Database</a>
+                    <a class="dropdown-item" href="/databases/search">Search Database</a>
                 </div>
             </li>
             <!-- Domains-->
@@ -76,6 +79,51 @@
                     <a class="dropdown-item" href="/environments/new">Create</a>
                 </div>
             </li>
+            <!-- Services-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarSerMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarSerMenuLink">
+                    <a class="dropdown-item" href="/service">Services</a>
+                </div>
+            </li>
+            <!-- Interfaces-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarIntMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Interfaces
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarIntMenuLink">
+                    <a class="dropdown-item" href="/interfaces">Interfaces</a>
+                </div>
+            </li>
+            <!-- Objects-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarObjMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Objects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarObjMenuLink">
+                    <a class="dropdown-item" href="/objects">Objects</a>
+                </div>
+            </li>
+            <!-- Operations-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarOpsMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Operations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarOpsMenuLink">
+                    <a class="dropdown-item" href="/operations">Operations</a>
+                </div>
+            </li>
+            <!-- Atoms-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarAtmMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Atoms
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarAtmMenuLink">
+                    <a class="dropdown-item" href="/atoms">Atoms</a>
+                </div>
+            </li>
             <!-- Metadata-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarMetMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,15 +132,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarMetMenuLink">
                     <a class="dropdown-item" href="/metadatas">View</a>
                     <a class="dropdown-item" href="/metadatas/new">Create</a>
-                </div>
-            </li>
-            <!-- Search-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarSeachMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Search
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarSeachMenuLink">
-                    <a class="dropdown-item" href="/search">Search</a>
                 </div>
             </li>
             <!-- Documentation-->
@@ -105,10 +144,5 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
     </div>
 </nav>
