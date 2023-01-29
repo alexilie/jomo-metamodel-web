@@ -57,7 +57,7 @@ public class MetamodelWebApplication {
 
 			//insert some mockup data
 			int i = 0;
-			for (i = 1; i < 10000; i++) {
+			for (i = 1; i < 100; i++) {
 
 					try {
 						//1

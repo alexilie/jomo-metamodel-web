@@ -18,11 +18,11 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 public class ComponentEntity extends BaseEntity {
 
     private String uuid;
-    private int applicationId;
-    private int eorganismId;
-    private int metadataId;
-    private int lastUpdatedUserId;
-    private int lastUpdatedApplicationId;
+    private Integer applicationId;
+    private Integer eorganismId;
+    private Integer metadataId;
+    private Integer lastUpdatedUserId;
+    private Integer lastUpdatedApplicationId;
 
     private String applicationName;
 
@@ -60,11 +60,11 @@ public class ComponentEntity extends BaseEntity {
         return lastUpdatedDate;
     }
 
-    public int getApplicationId() {
+    public Integer getApplicationId() {
         return applicationId;
     }
 
-    public void setApplicationId(int applicationId) {
+    public void setApplicationId(Integer applicationId) {
         this.applicationId = applicationId;
     }
 

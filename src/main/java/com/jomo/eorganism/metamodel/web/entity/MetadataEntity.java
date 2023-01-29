@@ -16,11 +16,11 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 //@Setter
 public class MetadataEntity extends BaseEntity  {
     private String uuid;
-    private int metadataId;
-    private int originalId;
+    private Integer metadataId;
+    private Integer originalId;
     private String originalUuid;
-    private int lastUpdatedUserId;
-    private int lastUpdatedApplicationId;
+    private Integer lastUpdatedUserId;
+    private Integer lastUpdatedApplicationId;
 
     private String name;
     private String type;
@@ -58,35 +58,35 @@ public class MetadataEntity extends BaseEntity  {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 
-    public int getMetadataId() {
+    public Integer getMetadataId() {
         return metadataId;
     }
 
-    public void setMetadataId(int metadataId) {
+    public void setMetadataId(Integer metadataId) {
         this.metadataId = metadataId;
     }
 
-    public int getOriginalId() {
+    public Integer getOriginalId() {
         return originalId;
     }
 
-    public void setOriginalId(int originalId) {
+    public void setOriginalId(Integer originalId) {
         this.originalId = originalId;
     }
 
-    public int getLastUpdatedUserId() {
+    public Integer getLastUpdatedUserId() {
         return lastUpdatedUserId;
     }
 
-    public void setLastUpdatedUserId(int lastUpdatedUserId) {
+    public void setLastUpdatedUserId(Integer lastUpdatedUserId) {
         this.lastUpdatedUserId = lastUpdatedUserId;
     }
 
-    public int getLastUpdatedApplicationId() {
+    public Integer getLastUpdatedApplicationId() {
         return lastUpdatedApplicationId;
     }
 
-    public void setLastUpdatedApplicationId(int lastUpdatedApplicationId) {
+    public void setLastUpdatedApplicationId(Integer lastUpdatedApplicationId) {
         this.lastUpdatedApplicationId = lastUpdatedApplicationId;
     }
 

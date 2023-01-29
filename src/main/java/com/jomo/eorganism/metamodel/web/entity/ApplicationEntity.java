@@ -17,20 +17,20 @@ public class ApplicationEntity extends BaseEntity {
 
     private String uuid;
 
-    private int domainId;
-    private int systemId;
-    private int environmentId;
-    private int releaseId;
-    private int applicationProfileId;
-    private int ownerId;
-    private int eorganismId;
-    private int supportGroupId;
-    private int segmentId;
-    private int metadataId;
-    private int businessUnitId;
-    private int eapplicationId;
-    private int lastUpdatedUserId;
-    private int lastUpdatedApplicationId;
+    private Integer domainId;
+    private Integer systemId;
+    private Integer environmentId;
+    private Integer releaseId;
+    private Integer applicationProfileId;
+    private Integer ownerId;
+    private Integer eorganismId;
+    private Integer supportGroupId;
+    private Integer segmentId;
+    private Integer metadataId;
+    private Integer businessUnitId;
+    private Integer eapplicationId;
+    private Integer lastUpdatedUserId;
+    private Integer lastUpdatedApplicationId;
 
     private String environmentName;
     private String releaseName;
@@ -90,11 +90,11 @@ public class ApplicationEntity extends BaseEntity {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 
-    public int getMetadataId() {
+    public Integer getMetadataId() {
         return metadataId;
     }
 
-    public void setMetadataId(int metadataId) {
+    public void setMetadataId(Integer metadataId) {
         this.metadataId = metadataId;
     }
 

@@ -17,10 +17,10 @@ import java.util.Date;
 //@Setter
 public class SystemEntity extends BaseEntity {
     private String uuid;
-    private int domainId;
-    private int metadataId;
-    private int lastUpdatedUserId;
-    private int lastUpdatedApplicationId;
+    private Integer domainId;
+    private Integer metadataId;
+    private Integer lastUpdatedUserId;
+    private Integer lastUpdatedApplicationId;
 
     private String name;
     private String type;
@@ -43,11 +43,11 @@ public class SystemEntity extends BaseEntity {
     private Date createdDate;
     private Date lastUpdatedDate;
 
-    public int getDomainId() {
+    public Integer getDomainId() {
         return domainId;
     }
 
-    public void setDomainId(int domainId) {
+    public void setDomainId(Integer domainId) {
         this.domainId = domainId;
     }
 
