@@ -8,7 +8,7 @@ public interface DatabaseService {
     Iterable<DatabaseEntity> listDatabases();
 
     @TransactionalReadOnly
-    DatabaseEntity findDatabase(long id);
+    DatabaseEntity findDatabase(int id);
 }
 
 

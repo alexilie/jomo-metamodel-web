@@ -19,7 +19,7 @@ public class DomainServiceImpl implements DomainService {
     }
 
     @Override
-    public DomainEntity findDomain(long id)  {
+    public DomainEntity findDomain(int id)  {
         Optional<DomainEntity> optionalSystem = domainRepository.findById(id);
 
         if(optionalSystem.isPresent())

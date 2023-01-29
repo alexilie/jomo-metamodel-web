@@ -19,7 +19,7 @@ public class SystemServiceImpl implements SystemService {
     }
 
     @Override
-    public SystemEntity findSystem(long id)  {
+    public SystemEntity findSystem(int id)  {
         Optional<SystemEntity> optionalSystem = systemRepository.findById(id);
 
         if(optionalSystem.isPresent())

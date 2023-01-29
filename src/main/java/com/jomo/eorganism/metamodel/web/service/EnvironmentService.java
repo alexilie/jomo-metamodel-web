@@ -8,7 +8,7 @@ public interface EnvironmentService {
     Iterable<EnvironmentEntity> listEnvironments();
 
     @TransactionalReadOnly
-    EnvironmentEntity findEnvironment(long id);
+    EnvironmentEntity findEnvironment(int id);
 }
 
 

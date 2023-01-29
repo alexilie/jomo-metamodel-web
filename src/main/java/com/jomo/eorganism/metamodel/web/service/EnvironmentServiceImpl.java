@@ -19,7 +19,7 @@ public class EnvironmentServiceImpl implements EnvironmentService {
     }
 
     @Override
-    public EnvironmentEntity findEnvironment(long id)  {
+    public EnvironmentEntity findEnvironment(int id)  {
         Optional<EnvironmentEntity> optionalEnvironment = environmentRepository.findById(id);
 
         if(optionalEnvironment.isPresent())

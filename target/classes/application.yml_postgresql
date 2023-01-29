@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: 'org.postgresql.Driver'
+    jdbc-url: 'jdbc:postgresql://localhost:5432/eorganism_web'
+    username: 'eorganism_web'
+    password: 'alex1900'
+  # JPA
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl.auto: validate
+        format_sql: false
+        physical_naming_strategy: 'com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy'
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  # ThymeLeaf
+  thymeleaf:
+    template-loader-path: classpath:/templates
+    suffix: .html
+    cache: false
+  #Actuator
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: info,health,metrics,loggers,beans,mappings
+      health:
+          show-details: always
+  liquibase:
+    change-log: 'classpath:db/liquibase-changelog-master.xml'
+    contexts: 'test-data'

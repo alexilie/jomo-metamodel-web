@@ -15,9 +15,9 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 //@Setter
 public class ReleaseEntity extends BaseEntity {
     private String uuid;
-    private Long metadataId;
-    private Long lastUpdatedUserId;
-    private Long lastUpdatedApplicationId;
+    private int metadataId;
+    private int lastUpdatedUserId;
+    private int lastUpdatedApplicationId;
 
     private String name;
     private String type;
@@ -34,27 +34,27 @@ public class ReleaseEntity extends BaseEntity {
     private Date createdDate;
     private Date lastUpdatedDate;
 
-    public Long getMetadataId() {
+    public int getMetadataId() {
         return metadataId;
     }
 
-    public void setMetadataId(Long metadataId) {
+    public void setMetadataId(int metadataId) {
         this.metadataId = metadataId;
     }
 
-    public Long getLastUpdatedUserId() {
+    public int getLastUpdatedUserId() {
         return lastUpdatedUserId;
     }
 
-    public void setLastUpdatedUserId(Long lastUpdatedUserId) {
+    public void setLastUpdatedUserId(int lastUpdatedUserId) {
         this.lastUpdatedUserId = lastUpdatedUserId;
     }
 
-    public Long getLastUpdatedApplicationId() {
+    public int getLastUpdatedApplicationId() {
         return lastUpdatedApplicationId;
     }
 
-    public void setLastUpdatedApplicationId(Long lastUpdatedApplicationId) {
+    public void setLastUpdatedApplicationId(int lastUpdatedApplicationId) {
         this.lastUpdatedApplicationId = lastUpdatedApplicationId;
     }
 

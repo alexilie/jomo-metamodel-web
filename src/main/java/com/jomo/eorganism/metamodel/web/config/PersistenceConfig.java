@@ -1,5 +1,8 @@
 package com.jomo.eorganism.metamodel.web.config;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -21,6 +24,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.jomo.eorganism.metamodel.web.repository")
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class PersistenceConfig {
 
     public static final String EORGANISM_PERSISTENCE_UNIT_NAME = "eorganis-web-pu";
@@ -39,6 +43,7 @@ public class PersistenceConfig {
         entityManagerFactoryBean.setPackagesToScan(ENTITY_BASE_PACKAGE);
         entityManagerFactoryBean.setPersistenceUnitName(EORGANISM_PERSISTENCE_UNIT_NAME);
         entityManagerFactoryBean.setJpaVendorAdapter(postgreSQLVendorAdapter());
+        //entityManagerFactoryBean.setJpaVendorAdapter(h2SQLVendorAdapter());
         entityManagerFactoryBean.setJpaProperties(additionalProperties());
         return entityManagerFactoryBean;
     }
@@ -64,6 +69,12 @@ public class PersistenceConfig {
     private HibernateJpaVendorAdapter postgreSQLVendorAdapter() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.POSTGRESQL);
+        return vendorAdapter;
+    }
+
+    private HibernateJpaVendorAdapter h2SQLVendorAdapter() {
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        vendorAdapter.setDatabase(Database.H2);
         return vendorAdapter;
     }
 

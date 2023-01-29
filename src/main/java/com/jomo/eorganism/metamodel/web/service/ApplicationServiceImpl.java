@@ -20,7 +20,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public ApplicationEntity findApplication(long id)  {
+    public ApplicationEntity findApplication(int id)  {
         Optional<ApplicationEntity> optionalApplication = applicationRepository.findById(id);
 
         if(optionalApplication.isPresent())
@@ -47,12 +47,12 @@ public class ApplicationServiceImpl implements ApplicationService {
     */
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(int id) {
         applicationRepository.findById(id).ifPresent(e -> applicationRepository.delete(e));
     }
 
     @Override
-    public ApplicationEntity updateById(long id, ApplicationEntity applicationEntity) {
+    public ApplicationEntity updateById(int id, ApplicationEntity applicationEntity) {
         applicationRepository.findById(id).ifPresent(e -> applicationRepository.save(applicationEntity));
         return applicationEntity;
     }

@@ -19,7 +19,7 @@ public class ReleaseServiceImpl implements ReleaseService {
     }
 
     @Override
-    public ReleaseEntity findRelease(long id)  {
+    public ReleaseEntity findRelease(int id)  {
         Optional<ReleaseEntity> optionalSystem = releaseRepository.findById(id);
 
         if(optionalSystem.isPresent())

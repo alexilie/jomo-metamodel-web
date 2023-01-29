@@ -29,7 +29,7 @@ spring:
         exposure:
           include: info,health,metrics,loggers,beans,mappings
       health:
-          show-details: always
+        show-details: always
   liquibase:
     change-log: 'classpath:db/liquibase-changelog-master.xml'
     contexts: 'test-data'

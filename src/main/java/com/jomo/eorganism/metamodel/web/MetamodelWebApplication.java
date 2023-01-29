@@ -23,6 +23,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.sql.SQLException;
+
 @SpringBootApplication
 public class MetamodelWebApplication {
 	private static final Logger log = LoggerFactory.getLogger(MetamodelWebApplication.class);
@@ -52,233 +54,127 @@ public class MetamodelWebApplication {
 			ReleaseEntity releaseEntityWorker;
 			EnvironmentEntity environmentEntityWorker;
 			MetadataEntity metadataEntityWorker;
-			//1
-			applicationEntityWorker = new ApplicationEntity("Jomo Metamodel Web", "Defect Tracking", "Jomo Trackzilla Defect tracking Application for tracking bugs");
 
-			componentEntityWorker = new ComponentEntity("Jomo Trackzilla Web", "Defect Tracking", "Jomo Trackzilla Web GUI Admin component");
-			databaseEntityWorker = new DatabaseEntity("Jomo Trackzilla Database", "Oracle Cloud", "Jomo Trackzilla Database");
-			domainEntityWorker = new DomainEntity("Billing Domain", "Billing", "Business Banking Billing Domain");
-			systemEntityWorker = new SystemEntity("CRM", "Critical", "CRM Customer Relationship System");
-			releaseEntityWorker = new ReleaseEntity("PROD-HEROKU Metamodel Web", "PROD", "CRM Customer Relationship System");
-			environmentEntityWorker = new EnvironmentEntity("ENV-HEROKU", "PROD", "HEROKU Environment");
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+			//insert some mockup data
+			int i = 0;
+			for (i = 1; i < 10000; i++) {
 
-			componentEntityWorker.setApplicationId(1L);
-			systemEntityWorker.setDomainId(1L);
-			environmentEntityWorker.setReleaseId(1L);
+					try {
+						//1
+						applicationEntityWorker = new ApplicationEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Defect tracking Application for tracking bugs" + "ONE:" + i);
 
-			releaseRepository.save(releaseEntityWorker);
-			domainRepository.save(domainEntityWorker);
-			environmentRepository.save(environmentEntityWorker);
-			applicationRepository.save(applicationEntityWorker);
-			componentRepository.save(componentEntityWorker);
-			databaseRepository.save(databaseEntityWorker);
-			systemRepository.save(systemEntityWorker);
+						componentEntityWorker = new ComponentEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Web GUI Admin component" + "ONE:" + i);
+						databaseEntityWorker = new DatabaseEntity("Jomo Metamodel Database" + "ONE:" + i, "Oracle Cloud" + "ONE:" + i, "Jomo Metamodel Database" + "ONE:" + i);
+						domainEntityWorker = new DomainEntity("Billing Domain", "Billing" + "ONE:" + i, "Business Banking Billing Domain" + "ONE:" + i);
+						systemEntityWorker = new SystemEntity("CRM", "Critical" + "ONE:" + i, "CRM Customer Relationship System" + "ONE:" + i);
+						releaseEntityWorker = new ReleaseEntity("PROD-HEROKU Metamodel Web"+ "ONE:" + i, "PROD" + "ONE:" + i, "CRM Customer Relationship System" + "ONE:" + i);
+						environmentEntityWorker = new EnvironmentEntity("ENV-HEROKU" + "ONE:" + i, "PROD" + "ONE:" + i, "HEROKU Environment" + "ONE:" + i);
+						metadataEntityWorker = new MetadataEntity("METADATA" + "ONE:" + i, "METADATA"+ "ONE:" + i, "METADATA DESC" + "ONE:" + i);
 
-			metadataEntityWorker.setName(releaseEntityWorker.getName());
-			metadataEntityWorker.setType(releaseEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(releaseEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(releaseEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(releaseEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(releaseEntityWorker.getLastUpdatedUserName());
+						componentEntityWorker.setApplicationId(1);
+						systemEntityWorker.setDomainId(1);
+						environmentEntityWorker.setReleaseId(1);
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						releaseRepository.save(releaseEntityWorker);
+						domainRepository.save(domainEntityWorker);
+						environmentRepository.save(environmentEntityWorker);
+						applicationRepository.save(applicationEntityWorker);
+						componentRepository.save(componentEntityWorker);
+						databaseRepository.save(databaseEntityWorker);
+						systemRepository.save(systemEntityWorker);
 
-			metadataEntityWorker.setName(domainEntityWorker.getName());
-			metadataEntityWorker.setType(domainEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(domainEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(domainEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(domainEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(domainEntityWorker.getLastUpdatedUserName());
+						metadataEntityWorker.setName(releaseEntityWorker.getName() + "ONE:" + i);
+						metadataEntityWorker.setType(releaseEntityWorker.getMetadataType() + "ONE:" + i);
+						metadataEntityWorker.setDescription(releaseEntityWorker.getDescription() + "ONE:" + i);
+						metadataEntityWorker.setOriginalId(releaseEntityWorker.getId());
+						metadataEntityWorker.setLastUpdatedApplicationName(releaseEntityWorker.getLastUpdatedApplicationName() + "ONE:" + i);
+						metadataEntityWorker.setLastUpdatedUserName(releaseEntityWorker.getLastUpdatedUserName() + "ONE:" + i);
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						metadataRepository.save(metadataEntityWorker);
 
-			metadataEntityWorker.setName(environmentEntityWorker.getName());
-			metadataEntityWorker.setType(environmentEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(environmentEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(environmentEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(environmentEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(environmentEntityWorker.getLastUpdatedUserName());
+						//reset
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						//2
+						applicationEntityWorker = new ApplicationEntity("EOrganism Connector" + "TWO:" + i, "Code Generator" + "TWO:" + i, "EOrganism Connector Source Code Generator from Metamodel" + "TWO:" + i);
 
-			metadataEntityWorker.setName(applicationEntityWorker.getName());
-			metadataEntityWorker.setType(applicationEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(applicationEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(applicationEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(applicationEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(applicationEntityWorker.getLastUpdatedUserName());
+						componentEntityWorker = new ComponentEntity("EOrganism Connector Swing GUI" + "TWO:" + i, "Java Swing GUI App" + "TWO:" + i, "EOrganism Connector Swing GUI, Java Swing GUI App" + "TWO:" + i);
+						databaseEntityWorker = new DatabaseEntity("EOrganism Connector Database" + "TWO:" + i, "My SQL" + "TWO:" + i, "Jomo Metamodel Database" + "TWO:" + i);
+						domainEntityWorker = new DomainEntity("Digital Domain" + "TWO:" + i,"Digital Channels" + "TWO:" + i, "Digital Domain Channels - Mobile, Web Channels" + "TWO:" + i);
+						systemEntityWorker = new SystemEntity("SAP" + "TWO:" + i, "Critical" + "TWO:" + i, "SAP System" + "TWO:" + i);
+						releaseEntityWorker = new ReleaseEntity("PROD-AWS Metamodel Web" + "TWO:" + i, "PROD" + "TWO:" + i, "PROD-AWS Infrastructure" + "TWO:" + i);
+						environmentEntityWorker = new EnvironmentEntity("ENV-AWS" + "TWO:" + i, "PROD" + "TWO:" + i, "AWS Cloud Environment" + "TWO:" + i);
+						metadataEntityWorker = new MetadataEntity("METADATA" + "TWO:" + i, "METADATA" + "TWO:" + i, "METADATA DESC" + "TWO:" + i);
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						componentEntityWorker.setApplicationId(2);
+						systemEntityWorker.setDomainId(2);
+						environmentEntityWorker.setReleaseId(2);
 
-			metadataEntityWorker.setName(componentEntityWorker.getName());
-			metadataEntityWorker.setType(componentEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(componentEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(componentEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(componentEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(componentEntityWorker.getLastUpdatedUserName());
+						releaseRepository.save(releaseEntityWorker);
+						domainRepository.save(domainEntityWorker);
+						environmentRepository.save(environmentEntityWorker);
+						applicationRepository.save(applicationEntityWorker);
+						componentRepository.save(componentEntityWorker);
+						databaseRepository.save(databaseEntityWorker);
+						systemRepository.save(systemEntityWorker);
 
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						metadataEntityWorker.setName(releaseEntityWorker.getName() + "TWO:" + i);
+						metadataEntityWorker.setType(releaseEntityWorker.getMetadataType() + "TWO:" + i);
+						metadataEntityWorker.setDescription(releaseEntityWorker.getDescription() + "TWO:" + i);
+						metadataEntityWorker.setOriginalId(releaseEntityWorker.getId());
+						metadataEntityWorker.setLastUpdatedApplicationName(releaseEntityWorker.getLastUpdatedApplicationName() + "TWO:" + i);
+						metadataEntityWorker.setLastUpdatedUserName(releaseEntityWorker.getLastUpdatedUserName() + "TWO:" + i);
 
-			metadataEntityWorker.setName(databaseEntityWorker.getName());
-			metadataEntityWorker.setType(databaseEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(databaseEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(databaseEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(databaseEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(databaseEntityWorker.getLastUpdatedUserName());
+						metadataRepository.save(metadataEntityWorker);
 
-			metadataRepository.save(metadataEntityWorker);
 
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+					} catch (Exception e) {
+						log.info("CommandLineRunner Exception " + e.toString());
 
-			metadataEntityWorker.setName(systemEntityWorker.getName());
-			metadataEntityWorker.setType(systemEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(systemEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(systemEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(systemEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(systemEntityWorker.getLastUpdatedUserName());
+					}
 
-			metadataRepository.save(metadataEntityWorker);
+				}// outer for i
 
-			//2
-			applicationEntityWorker = new ApplicationEntity("EOrganism Connector", "Code Generator", "EOrganism Connector Source Code Generator from Metamodel");
+					/*
+					try {
 
-			componentEntityWorker = new ComponentEntity("EOrganism Connector Swing GUI", "Java Swing GUI App", "EOrganism Connector Swing GUI, Java Swing GUI App");
-			databaseEntityWorker = new DatabaseEntity("EOrganism Connector Database", "My SQL", "Jomo Trackzilla Database");
-			domainEntityWorker = new DomainEntity("Digital Domain", "Digital Channels", "Digital Domain Channels - Mobile, Web Channels");
-			systemEntityWorker = new SystemEntity("SAP", "Critical", "SAP System");
-			releaseEntityWorker = new ReleaseEntity("PROD-AWS Metamodel Web", "PROD", "PROD-AWS Infrastructure");
-			environmentEntityWorker = new EnvironmentEntity("ENV-AWS", "PROD", "AWS Cloud Environment");
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						for (ReleaseEntity releaseEntity : releaseRepository.findAll()) {
+							log.info("The release is: " + releaseEntity.toString());
+						}
 
-			componentEntityWorker.setApplicationId(1L);
-			systemEntityWorker.setDomainId(1L);
-			environmentEntityWorker.setReleaseId(1L);
+						for (DomainEntity domainEntity : domainRepository.findAll()) {
+							log.info("The domain is: " + domainEntity.toString());
+						}
 
-			releaseRepository.save(releaseEntityWorker);
-			domainRepository.save(domainEntityWorker);
-			environmentRepository.save(environmentEntityWorker);
-			applicationRepository.save(applicationEntityWorker);
-			componentRepository.save(componentEntityWorker);
-			databaseRepository.save(databaseEntityWorker);
-			systemRepository.save(systemEntityWorker);
+						for (EnvironmentEntity environmentEntity : environmentRepository.findAll()) {
+							log.info("The environment is: " + environmentEntity.toString());
+						}
 
-			metadataEntityWorker.setName(releaseEntityWorker.getName());
-			metadataEntityWorker.setType(releaseEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(releaseEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(releaseEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(releaseEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(releaseEntityWorker.getLastUpdatedUserName());
+						for (ApplicationEntity applicationEntity : applicationRepository.findAll()) {
+							log.info("The application is: " + applicationEntity.toString());
+						}
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						for (ComponentEntity componentEntity : componentRepository.findAll()) {
+							log.info("The component is: " + componentEntity.toString());
+						}
 
-			metadataEntityWorker.setName(domainEntityWorker.getName());
-			metadataEntityWorker.setType(domainEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(domainEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(domainEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(domainEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(domainEntityWorker.getLastUpdatedUserName());
+						for (DatabaseEntity databaseEntity : databaseRepository.findAll()) {
+							log.info("The database is: " + databaseEntity.toString());
+						}
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+						for (SystemEntity systemEntity : systemRepository.findAll()) {
+							log.info("The system is: " + systemEntity.toString());
+						}
 
-			metadataEntityWorker.setName(environmentEntityWorker.getName());
-			metadataEntityWorker.setType(environmentEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(environmentEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(environmentEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(environmentEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(environmentEntityWorker.getLastUpdatedUserName());
+						for (MetadataEntity metadataEntity : metadataRepository.findAll()) {
+							log.info("The metadata is: " + metadataEntity.toString());
+						}
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
+					} catch (Exception e) {
+						log.info("CommandLineRunner Exception:: for " + e.toString());
 
-			metadataEntityWorker.setName(applicationEntityWorker.getName());
-			metadataEntityWorker.setType(applicationEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(applicationEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(applicationEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(applicationEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(applicationEntityWorker.getLastUpdatedUserName());
+					}
 
-			metadataRepository.save(metadataEntityWorker);
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
-
-			metadataEntityWorker.setName(componentEntityWorker.getName());
-			metadataEntityWorker.setType(componentEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(componentEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(componentEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(componentEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(componentEntityWorker.getLastUpdatedUserName());
-
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
-
-			metadataEntityWorker.setName(databaseEntityWorker.getName());
-			metadataEntityWorker.setType(databaseEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(databaseEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(databaseEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(databaseEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(databaseEntityWorker.getLastUpdatedUserName());
-
-			metadataRepository.save(metadataEntityWorker);
-
-			//reset
-			metadataEntityWorker = new MetadataEntity("METADATA", "METADATA", "METADATA DESC");
-
-			metadataEntityWorker.setName(systemEntityWorker.getName());
-			metadataEntityWorker.setType(systemEntityWorker.getMetadataType());
-			metadataEntityWorker.setDescription(systemEntityWorker.getDescription());
-			metadataEntityWorker.setOriginalId(systemEntityWorker.getId());
-			metadataEntityWorker.setLastUpdatedApplicationName(systemEntityWorker.getLastUpdatedApplicationName());
-			metadataEntityWorker.setLastUpdatedUserName(systemEntityWorker.getLastUpdatedUserName());
-
-			metadataRepository.save(metadataEntityWorker);
-
-			for (ReleaseEntity releaseEntity : releaseRepository.findAll()) {
-				log.info("The release is: " + releaseEntity.toString());
-			}
-
-			for (DomainEntity domainEntity : domainRepository.findAll()) {
-				log.info("The domain is: " + domainEntity.toString());
-			}
-
-			for (EnvironmentEntity environmentEntity : environmentRepository.findAll()) {
-				log.info("The environment is: " + environmentEntity.toString());
-			}
-
-			for (ApplicationEntity applicationEntity : applicationRepository.findAll()) {
-				log.info("The application is: " + applicationEntity.toString());
-			}
-
-			for (ComponentEntity componentEntity : componentRepository.findAll()) {
-				log.info("The component is: " + componentEntity.toString());
-			}
-
-			for (DatabaseEntity databaseEntity : databaseRepository.findAll()) {
-				log.info("The database is: " + databaseEntity.toString());
-			}
-
-			for (SystemEntity systemEntity : systemRepository.findAll()) {
-				log.info("The system is: " + systemEntity.toString());
-			}
-
-			for (MetadataEntity metadataEntity : metadataRepository.findAll()) {
-				log.info("The metadata is: " + metadataEntity.toString());
-			}
+				 	*/
 		};
 	}//
 

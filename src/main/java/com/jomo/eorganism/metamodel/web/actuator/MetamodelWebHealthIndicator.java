@@ -10,12 +10,12 @@ public class MetamodelWebHealthIndicator implements HealthIndicator {
 
     @Override
     public Health health() {
-        if (!isRunningTrackzillaService()) {
+        if (!isRunningMetamodelWebService()) {
             return Health.down().withDetail(message_key, "Not Available").build();
         }
         return Health.up().withDetail(message_key, "Available").build();
     }
-    private Boolean isRunningTrackzillaService() {
+    private Boolean isRunningMetamodelWebService() {
         Boolean isRunning = false;
         // TO DO and validate with external service
         return isRunning;

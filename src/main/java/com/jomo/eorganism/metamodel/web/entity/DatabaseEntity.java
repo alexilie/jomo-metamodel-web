@@ -17,19 +17,19 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 public class DatabaseEntity extends BaseEntity {
 
     private String uuid;
-    private Long domainId;
-    private Long systemId;
-    private Long environmentId;
-    private Long releaseId;
-    private Long applicationId;
-    private Long ownerId;
-    private Long supportGroupId;
-    private Long eorganismId;
-    private Long segmentId;
-    private Long metadataId;
-    private Long businessUnitId;
-    private Long lastUpdatedUserId;
-    private Long lastUpdatedApplicationId;
+    private int domainId;
+    private int systemId;
+    private int environmentId;
+    private int releaseId;
+    private int applicationId;
+    private int ownerId;
+    private int supportGroupId;
+    private int eorganismId;
+    private int segmentId;
+    private int metadataId;
+    private int businessUnitId;
+    private int lastUpdatedUserId;
+    private int lastUpdatedApplicationId;
 
     private String environmentName;
     private String releaseName;

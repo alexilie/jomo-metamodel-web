@@ -8,7 +8,7 @@ public interface ComponentService {
     Iterable<ComponentEntity> listComponents();
 
     @TransactionalReadOnly
-    ComponentEntity findComponent(long id);
+    ComponentEntity findComponent(int id);
 }
 
 

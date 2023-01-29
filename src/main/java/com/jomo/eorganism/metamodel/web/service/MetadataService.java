@@ -8,7 +8,7 @@ public interface MetadataService {
     Iterable<MetadataEntity> listMetadatas();
 
     @TransactionalReadOnly
-    MetadataEntity findMetadata(long id);
+    MetadataEntity findMetadata(int id);
 }
 
 

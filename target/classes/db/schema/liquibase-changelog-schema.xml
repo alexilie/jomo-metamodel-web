@@ -7,7 +7,7 @@
 	<changeSet id="release_table" author="EOrganism">
 		<comment>Create release table</comment>
 		<createTable tableName="release">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="release_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
@@ -43,11 +43,11 @@
 			<column name="last_updated_date" type="TIMESTAMP">
 			</column>
 
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 		</createTable>
@@ -60,12 +60,12 @@
 	<changeSet id="environment_table" author="EOrganism">
 		<comment>Create environment table</comment>
 		<createTable tableName="environment">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="environment_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
-			<column name="release_id" type="BIGINT">
+			<column name="release_id" type="INT">
 				<constraints nullable="false"/>
 			</column>
 
@@ -101,11 +101,11 @@
 			<column name="last_updated_date" type="TIMESTAMP">
 			</column>
 
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 		</createTable>
@@ -113,6 +113,8 @@
 		<createIndex tableName="environment" indexName="environment_release_idx">
 			<column name="release_id"/>
 		</createIndex>
+		<!-- Removed for H2 -->
+		<!--
 		<addForeignKeyConstraint baseTableName="environment"
 								 baseColumnNames="release_id"
 								 referencedTableName="release"
@@ -122,6 +124,7 @@
 								 initiallyDeferred="false"
 								 onDelete="NO ACTION"
 								 onUpdate="NO ACTION"/>
+		-->
 		<addDefaultValue columnName="id"
 						 defaultValueSequenceNext="environment_seq"
 						 tableName="environment"/>
@@ -130,7 +133,7 @@
 	<changeSet id="domain_table" author="EOrganism">
 		<comment>Create domain table</comment>
 		<createTable tableName="domain">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="domain_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
@@ -163,11 +166,11 @@
 			<column name="last_updated_date" type="TIMESTAMP">
 			</column>
 
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 		</createTable>
@@ -180,13 +183,13 @@
 	<changeSet id="system_table" author="EOrganism">
 		<comment>Create system table</comment>
 		<createTable tableName="system">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="system_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
 
-			<column name="domain_id" type="BIGINT">
+			<column name="domain_id" type="INT">
 				<constraints nullable="false"/>
 			</column>
 
@@ -232,11 +235,11 @@
 			<column name="last_updated_date" type="TIMESTAMP">
 			</column>
 
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 		</createTable>
@@ -250,39 +253,39 @@
 	<changeSet id="application_table" author="EOrganism">
 		<comment>Create application table</comment>
 		<createTable tableName="application">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="application_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
 
-			<column name="domain_id" type="BIGINT">
+			<column name="domain_id" type="INT">
 			</column>
-			<column name="system_id" type="BIGINT">
+			<column name="system_id" type="INT">
 			</column>
-			<column name="release_id" type="BIGINT">
+			<column name="release_id" type="INT">
 			</column>
-			<column name="environment_id" type="BIGINT">
+			<column name="environment_id" type="INT">
 			</column>
-			<column name="eapplication_id" type="BIGINT">
+			<column name="eapplication_id" type="INT">
 			</column>
-			<column name="owner_id" type="BIGINT">
+			<column name="owner_id" type="INT">
 			</column>
-			<column name="application_profile_id" type="BIGINT">
+			<column name="application_profile_id" type="INT">
 			</column>
-			<column name="support_group_id" type="BIGINT">
+			<column name="support_group_id" type="INT">
 			</column>
-			<column name="eorganism_id" type="BIGINT">
+			<column name="eorganism_id" type="INT">
 			</column>
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="segment_id" type="BIGINT">
+			<column name="segment_id" type="INT">
 			</column>
-			<column name="business_unit_id" type="BIGINT">
+			<column name="business_unit_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 			<column name="domain_name" type="VARCHAR(200)">
@@ -384,20 +387,20 @@
 	<changeSet id="metadata_table" author="EOrganism">
 		<comment>Create metadata table</comment>
 		<createTable tableName="metadata">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="metadata_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="original_id" type="BIGINT">
+			<column name="original_id" type="INT">
 			</column>
 			<column name="original_uuid" type="VARCHAR(150)">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 			<column name="name" type="VARCHAR(100)">
@@ -453,21 +456,21 @@
 	<changeSet id="component_table" author="EOrganism">
 		<comment>Create component table</comment>
 		<createTable tableName="component">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="component_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="eorganism_id" type="BIGINT">
+			<column name="eorganism_id" type="INT">
 			</column>
-			<column name="application_id" type="BIGINT">
+			<column name="application_id" type="INT">
 				<constraints nullable="false"/>
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 			<column name="application_name" type="VARCHAR(100)">
@@ -533,36 +536,36 @@
 	<changeSet id="database_table" author="EOrganism">
 		<comment>Create database table</comment>
 		<createTable tableName="database">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="database_pkey"/>
 			</column>
 			<column name="uuid" type="VARCHAR(150)">
 			</column>
-			<column name="domain_id" type="BIGINT">
+			<column name="domain_id" type="INT">
 			</column>
-			<column name="system_id" type="BIGINT">
+			<column name="system_id" type="INT">
 			</column>
-			<column name="release_id" type="BIGINT">
+			<column name="release_id" type="INT">
 			</column>
-			<column name="environment_id" type="BIGINT">
+			<column name="environment_id" type="INT">
 			</column>
-			<column name="application_id" type="BIGINT">
+			<column name="application_id" type="INT">
 			</column>
-			<column name="metadata_id" type="BIGINT">
+			<column name="metadata_id" type="INT">
 			</column>
-			<column name="eorganism_id" type="BIGINT">
+			<column name="eorganism_id" type="INT">
 			</column>
-			<column name="owner_id" type="BIGINT">
+			<column name="owner_id" type="INT">
 			</column>
-			<column name="segment_id" type="BIGINT">
+			<column name="segment_id" type="INT">
 			</column>
-			<column name="business_unit_id" type="BIGINT">
+			<column name="business_unit_id" type="INT">
 			</column>
-			<column name="support_group_id" type="BIGINT">
+			<column name="support_group_id" type="INT">
 			</column>
-			<column name="last_updated_user_id" type="BIGINT">
+			<column name="last_updated_user_id" type="INT">
 			</column>
-			<column name="last_updated_application_id" type="BIGINT">
+			<column name="last_updated_application_id" type="INT">
 			</column>
 
 			<column name="domain_name" type="VARCHAR(200)">
@@ -675,12 +678,12 @@
 		<comment>Create application history table</comment>
 
 		<createTable tableName="application_history">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="application_history_pkey"/>
 			</column>
 			<column name="correlation_id" type="VARCHAR(100)">
 			</column>
-			<column name="application_id" type="BIGINT">
+			<column name="application_id" type="INT">
 				<constraints nullable="false"/>
 			</column>
 			<column name="name" type="VARCHAR(100)">
@@ -712,10 +715,10 @@
 	<changeSet id="component_history_table" author="EOrganism">
 		<comment>Create component history table</comment>
 		<createTable tableName="component_history">
-			<column name="id" type="BIGINT">
+			<column name="id" type="INT">
 				<constraints nullable="false" primaryKey="true" primaryKeyName="component_history_pkey"/>
 			</column>
-			<column name="component_id" type="BIGINT">
+			<column name="component_id" type="INT">
 				<constraints nullable="false"/>
 			</column>
 			<column name="name" type="VARCHAR(100)">

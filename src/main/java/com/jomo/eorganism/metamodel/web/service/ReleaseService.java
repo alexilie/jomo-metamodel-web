@@ -8,7 +8,7 @@ public interface ReleaseService {
     Iterable<ReleaseEntity> listReleases();
 
     @TransactionalReadOnly
-    ReleaseEntity findRelease(long id);
+    ReleaseEntity findRelease(int id);
 }
 
 

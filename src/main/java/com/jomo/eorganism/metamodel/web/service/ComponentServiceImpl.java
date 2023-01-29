@@ -19,7 +19,7 @@ public class ComponentServiceImpl implements ComponentService {
     }
 
     @Override
-    public ComponentEntity findComponent(long id)  {
+    public ComponentEntity findComponent(int id)  {
         Optional<ComponentEntity> optionalComponent = componentRepository.findById(id);
 
         if(optionalComponent.isPresent())

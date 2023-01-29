@@ -19,7 +19,7 @@ public class MetadataServiceImpl implements MetadataService {
     }
 
     @Override
-    public MetadataEntity findMetadata(long id)  {
+    public MetadataEntity findMetadata(int id)  {
         Optional<MetadataEntity> optionalMetadata = metadataRepository.findById(id);
 
         if(optionalMetadata.isPresent())

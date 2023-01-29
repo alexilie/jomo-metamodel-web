@@ -4,8 +4,7 @@ import java.util.Date;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 
@@ -15,22 +14,23 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 @Getter
 //@Setter
 public class ApplicationEntity extends BaseEntity {
+
     private String uuid;
 
-    private Long domainId;
-    private Long systemId;
-    private Long environmentId;
-    private Long releaseId;
-    private Long applicationProfileId;
-    private Long ownerId;
-    private Long eorganismId;
-    private Long supportGroupId;
-    private Long segmentId;
-    private Long metadataId;
-    private Long businessUnitId;
-    private Long eapplicationId;
-    private Long lastUpdatedUserId;
-    private Long lastUpdatedApplicationId;
+    private int domainId;
+    private int systemId;
+    private int environmentId;
+    private int releaseId;
+    private int applicationProfileId;
+    private int ownerId;
+    private int eorganismId;
+    private int supportGroupId;
+    private int segmentId;
+    private int metadataId;
+    private int businessUnitId;
+    private int eapplicationId;
+    private int lastUpdatedUserId;
+    private int lastUpdatedApplicationId;
 
     private String environmentName;
     private String releaseName;
@@ -90,11 +90,11 @@ public class ApplicationEntity extends BaseEntity {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 
-    public Long getMetadataId() {
+    public int getMetadataId() {
         return metadataId;
     }
 
-    public void setMetadataId(Long metadataId) {
+    public void setMetadataId(int metadataId) {
         this.metadataId = metadataId;
     }
 

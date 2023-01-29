@@ -8,7 +8,7 @@ public interface DomainService {
     Iterable<DomainEntity> listDomains();
 
     @TransactionalReadOnly
-    DomainEntity findDomain(long id);
+    DomainEntity findDomain(int id);
 }
 
 

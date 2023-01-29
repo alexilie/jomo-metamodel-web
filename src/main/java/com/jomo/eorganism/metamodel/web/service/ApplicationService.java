@@ -9,7 +9,7 @@ public interface ApplicationService {
     Iterable<ApplicationEntity> listApplications();
 
     @TransactionalReadOnly
-    ApplicationEntity findApplication(long id);
+    ApplicationEntity findApplication(int id);
 
     @TransactionalWrite
     ApplicationEntity addApplication(ApplicationEntity applicationEntity);
@@ -17,10 +17,10 @@ public interface ApplicationService {
     //void addApplicationArray(<ApplicationEntity> applicationEntityArray);
 
     @TransactionalWrite
-    void deleteById(long id);
+    void deleteById(int id);
 
     @TransactionalWrite
-    ApplicationEntity updateById(long id, ApplicationEntity applicationEntity);
+    ApplicationEntity updateById(int id, ApplicationEntity applicationEntity);
 }
 
 

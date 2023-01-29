@@ -21,7 +21,7 @@ public class DatabaseServiceImpl implements DatabaseService {
     }
 
     @Override
-    public DatabaseEntity findDatabase(long id)  {
+    public DatabaseEntity findDatabase(int id)  {
         Optional<DatabaseEntity> optionalDatabase = databaseRepository.findById(id);
 
         if(optionalDatabase.isPresent())

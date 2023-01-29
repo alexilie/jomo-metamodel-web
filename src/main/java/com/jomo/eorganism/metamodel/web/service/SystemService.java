@@ -8,7 +8,7 @@ public interface SystemService {
     Iterable<SystemEntity> listSystems();
 
     @TransactionalReadOnly
-    SystemEntity findSystem(long id);
+    SystemEntity findSystem(int id);
 }
 
 
