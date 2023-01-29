@@ -42,8 +42,8 @@ public class PersistenceConfig {
         entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPackagesToScan(ENTITY_BASE_PACKAGE);
         entityManagerFactoryBean.setPersistenceUnitName(EORGANISM_PERSISTENCE_UNIT_NAME);
-        entityManagerFactoryBean.setJpaVendorAdapter(postgreSQLVendorAdapter());
-        //entityManagerFactoryBean.setJpaVendorAdapter(h2SQLVendorAdapter());
+        //entityManagerFactoryBean.setJpaVendorAdapter(postgreSQLVendorAdapter());
+        entityManagerFactoryBean.setJpaVendorAdapter(h2SQLVendorAdapter());
         entityManagerFactoryBean.setJpaProperties(additionalProperties());
         return entityManagerFactoryBean;
     }

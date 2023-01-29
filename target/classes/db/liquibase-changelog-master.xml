@@ -7,7 +7,7 @@
 	<include file="schema/liquibase-changelog-schema.xml" relativeToChangelogFile="true"/>
 	<include file="views/liquibase-changelog-views.xml" relativeToChangelogFile="true"/>
 	<!--exclude 2 line bellow for H2 DB; include the lines for PostgreSQL DB-->
-	<include file="functions/liquibase-changelog-functions.xml" relativeToChangelogFile="true"/>
-	<include file="data/test/liquibase-changelog-test-data.xml" relativeToChangelogFile="true"/>
+	<!--<include file="functions/liquibase-changelog-functions.xml" relativeToChangelogFile="true"/>-->
+	<!--<include file="data/test/liquibase-changelog-test-data.xml" relativeToChangelogFile="true"/>-->
 
 </databaseChangeLog>
