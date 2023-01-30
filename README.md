@@ -194,8 +194,8 @@ no user and no password is required
 
 Database:    eorganism_web
 DB user:     eorganism_web
-DB password:  
-DB port:     
+DB password:     
+DB port:        
 DB host:     localhost
 DB Driver:   org.h2.Driver
 
@@ -205,19 +205,27 @@ DB Driver:   org.h2.Driver
 
 ## H2 Database configuration - | Java in memory DB | Screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
 
 ## H2 Database Console | Screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-35.PNG "Screen 35")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-37.PNG "Screen 37")
 
 ## Accessing the REST API GET operations | directly in the browser | screens
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-20.PNG "Screen 20")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-21.PNG "Screen 21")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-22.PNG "Screen 22")
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-23.PNG "Screen 23")\
+
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-23.PNG "Screen 23")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-24.PNG "Screen 24")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-25.PNG "Screen 25")
+
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-35.PNG "Screen 35")
 
 ## Swagger UI | screen
