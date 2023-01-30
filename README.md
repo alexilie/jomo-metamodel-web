@@ -132,15 +132,21 @@ then will deploy the "jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar" JAR in the Tomc
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-11.PNG "Screen 11")
 
 ## Runnning the Jomo Metamodel Web application in the browser | screen
-http://localhost:8080/
+Home page: http://localhost:8080/
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.PNG "Screen 38")
 
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.PNG "Screen 12")
+Accessing Application menu: http://localhost:8080/
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.PNG "Screen 39")
 
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-13.PNG "Screen 13")
+View Applications: http://localhost:8080/applications
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-13.PNG "Screen 40")
 
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-14.PNG "Screen 14")
+Update existing application: http://localhost:8080/applications-edit/6
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-14.PNG "Screen 41")
 
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-15.PNG "Screen 15")
+Add new application: http://localhost:8080/applications-new
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-42.PNG "Screen 42")
+
 
 ## Accessing the Metamodel App, App Resources & REST API resources | screen
 | Resource        |  URL         	                                     |          |
