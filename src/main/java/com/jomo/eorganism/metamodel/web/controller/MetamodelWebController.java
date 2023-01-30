@@ -1,5 +1,8 @@
 package com.jomo.eorganism.metamodel.web.controller;
 
+import com.jomo.eorganism.metamodel.web.MetamodelWebApplication;
+import com.jomo.eorganism.metamodel.web.entity.ApplicationEntity;
+import com.jomo.eorganism.metamodel.web.repository.ApplicationRepository;
 import com.jomo.eorganism.metamodel.web.service.ApplicationService;
 import com.jomo.eorganism.metamodel.web.service.ComponentService;
 import com.jomo.eorganism.metamodel.web.service.DatabaseService;
@@ -8,16 +11,25 @@ import com.jomo.eorganism.metamodel.web.service.DomainService;
 import com.jomo.eorganism.metamodel.web.service.ReleaseService;
 import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
 import com.jomo.eorganism.metamodel.web.service.MetadataService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class MetamodelWebController {
+    private static final Logger log = LoggerFactory.getLogger(MetamodelWebController.class);
+
     private ApplicationService applicationService;
     private ComponentService componentService;
     private DatabaseService databaseService;
@@ -26,6 +38,8 @@ public class MetamodelWebController {
     private ReleaseService releaseService;
     private EnvironmentService environmentService;
     private MetadataService metadataService;
+
+    private ApplicationEntity applicationEntity;
 
     @Autowired
     public void setApplicationService(ApplicationService applicationService) { this.applicationService = applicationService; }
@@ -56,37 +70,68 @@ public class MetamodelWebController {
     }
 
     @Autowired
-    public void setEnvironmentService(EnvironmentService environmentService) {  this.environmentService = environmentService;
-    }
+    public void setEnvironmentService(EnvironmentService environmentService) {  this.environmentService = environmentService; }
 
     @Autowired
-    public void setMetamodelService(MetadataService metadataService) {  this.metadataService = metadataService;
-    }
+    public void setMetamodelService(MetadataService metadataService) {  this.metadataService = metadataService; }
 
+    // Applications
     @GetMapping("/applications")
     public String retrieveApplications(Model model){
         model.addAttribute("applications", applicationService.listApplications());
         return "applications";
     }
 
-    @PostMapping("/applications")
-    public String addApplication(Model model){
-         //model.addAttribute("applications", applicationService.newApplication());
-         return "applications";
+    @GetMapping("/applications-new")
+    public String showAddNewAppForm(Model model){
+        return "applications-new";
     }
 
+    @GetMapping("/applications-update-form")
+    public String showAddNewAppForm(){
+        return "applications-update";
+    }
+
+    @GetMapping("/applications-edit/{id}")
+    public String editApplication(@PathVariable("id") Integer id, Model model){
+        ApplicationEntity  applicationEntity = applicationService.findApplication(id);
+        model.addAttribute("application", applicationEntity);
+        return "applications-edit";
+    }
+
+    @PostMapping("/applications")
+    public String addApplication(Model model, BindingResult result, ApplicationEntity applicationEntity){
+        model.addAttribute("application", applicationEntity);
+        log.info("addApplication - " + applicationEntity.toString());
+
+        applicationService.addApplication(applicationEntity);
+        return "applications";
+    }
+
+    @PostMapping("/applications/{id}")
+    public String updateApplication(Model model, BindingResult result, @PathVariable("id") Integer id,  ApplicationEntity applicationEntity){
+        model.addAttribute("application", applicationEntity);
+        log.info("updateApplication - " + applicationEntity.toString());
+        applicationEntity.setId(id);
+
+        final ApplicationEntity updatedApplication = applicationService.updateById(id, applicationEntity);
+
+        if (updatedApplication == null) {
+            log.info("updateApplication SUCCESS - ");
+            return "applications";
+        } else {
+            return "errors";
+        }
+    }
 
     @DeleteMapping("/applications")
-    public String deleteApplication(Model model){
-        //model.addAttribute("applications", applicationService.deleteApplication());
+    public String deleteApplication(@PathVariable("id") Integer id){
+        log.info("deleteApplication id - " + id);
+        applicationService.deleteById(id);
         return "applications";
     }
 
-    @PatchMapping("/applications")
-    public String retrieveApplications(){
-        return "applications";
-    }
-
+    // Components
     @GetMapping("/components")
     public String retrieveComponents(Model model){
         model.addAttribute("components", componentService.listComponents());

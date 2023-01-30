@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
-    jdbcUrl: jdbc:h2:mem:mydb
+    url: jdbc:h2:mem:metamodel-db
+    jdbcUrl: jdbc:h2:mem:metamodel-db
     driverClassName: org.h2.Driver
-    h2:
-      console:
-        enabled: true
+  h2:
+    console:
+      enabled: true
   # JPA
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect

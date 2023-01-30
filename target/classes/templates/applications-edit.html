@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>EOrganism Metamodel Web Application :: Edit Application</title>
+</head>
+<body>
+<div class="container">
+    <div th:insert="fragments/navbar.html"> </div>
+
+    <div class="jumbotron">
+        <h3>Update Application</h3>
+            <form class="form-inline my-2 my-lg-0" action="#" th:action="@{/applications/{id}(id=${application.id})}" method="post">
+                     <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Id</td>
+                                    <td><input type="text"  th:field="${application.id}" class="form-control mr-sm-2" id="id"></td>
+                                </tr>
+                                <tr>
+                                    <td>Application Name</td>
+                                    <td><input type="text"  th:field="${application.name}" class="form-control mr-sm-2" id="name" placeholder="Enter Name" aria-label="input text"></td>
+                                </tr>
+                                 <tr>
+                                     <td>Application Type</td>
+                                     <td><input type="text" th:field="${application.type}" class="form-control mr-sm-2" id="type" placeholder="Enter Type" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Application Description</td>
+                                     <td><input type="text" th:field="${application.description}" class="form-control mr-sm-2" id="description" placeholder="Enter Description" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Domain</td>
+                                     <td><input type="text" th:field="${application.domainName}" class="form-control mr-sm-2" id="domainName" placeholder="Enter Domain" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>System</td>
+                                     <td><input type="text" th:field="${application.systemName}" class="form-control mr-sm-2" id="systemName" placeholder="Enter System" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Release</td>
+                                     <td><input type="text" th:field="${application.releaseName}" class="form-control mr-sm-2" id="releaseName" placeholder="Enter Release" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Environment</td>
+                                     <td><input type="text" th:field="${application.environmentName}" class="form-control mr-sm-2" id="environmentName" placeholder="Enter Environment" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Segment</td>
+                                     <td><input type="text" th:field="${application.segmentName}" class="form-control mr-sm-2" id="segmentName" placeholder="Enter Segment" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Version</td>
+                                     <td><input type="text" th:field="${application.version}" class="form-control mr-sm-2" id="version" placeholder="Enter Version" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td>Status</td>
+                                     <td><input type="text" th:field="${application.status}" class="form-control mr-sm-2" id="status" placeholder="Enter Status" aria-label="input text"></td>
+                                 </tr>
+                                 <tr>
+                                     <td></td>
+                                     <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Update</button></td>
+                                 </tr>
+                        </tbody>
+                    </table>
+
+            </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

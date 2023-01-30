@@ -111,10 +111,10 @@ public class MetamodelWebRestController {
         }
     }
 
-    @PutMapping("/applications/{id}")
+    @PostMapping("/applications/{id}")
     @ApiOperation("Update Application using id")
     @ResponseStatus(code = HttpStatus.OK)
-    public ResponseEntity<ApplicationEntity> update(@RequestBody ApplicationEntity updateApplicationEntity, @PathVariable("id") Integer id) {
+    public ResponseEntity<ApplicationEntity> updateApplication(@PathVariable("id") Integer id, @RequestBody ApplicationEntity updateApplicationEntity) {
         final ApplicationEntity updatedApplication = applicationService.updateById(id, updateApplicationEntity);
         if (updatedApplication == null) {
             return ResponseEntity.notFound().build();

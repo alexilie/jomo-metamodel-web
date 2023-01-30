@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>EOrganism Metamodel Web Applications :: Applications</title>
+    <title>EOrganism Metamodel Web Application :: Applications</title>
 </head>
 <body>
 <div class="container">
@@ -35,7 +35,7 @@
 
                 <tr th:each="item : ${applications}">
                     <td th:text="${item.id}"></td>
-                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.name}">  </td>
                     <td th:text="${item.type}"></td>
                     <td th:text="${item.description}"></td>
                     <td th:text="${item.uuid}"></td>
@@ -45,8 +45,8 @@
                     <td th:text="${item.environmentName}"></td>
                     <td th:text="${item.createdDate}"></td>
                     <td th:text="${item.lastUpdatedDate}"></td>
-                    <td><button class="btn btn-outline-success my-2 my-sm-0" href="/applications/edit/${item.id}" type="submit">Edit</button></td>
-                    <td><button class="btn btn-outline-success my-2 my-sm-0" href="/applications/delete/${item.id}" type="submit">Delete</button></td>
+                    <td><a th:href="@{/applications-edit/{id}(id=${item.id})}" class="btn btn-primary">Edit</a></td>
+                    <td><a th:href="@{/applications-delete/{id}(id=${item.id})}" class="btn btn-primary">Delete</a></td>
                    <!-- <td th:text="${item.component}"></td>-->
                 </tr>
                 </tbody>
