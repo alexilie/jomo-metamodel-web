@@ -67,22 +67,24 @@ Github Trackzilla Application URL = TO DO
 ## GitHub project  | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-1.PNG "Screen 1")
 
-3. Go to your local "Projects" or create a local working folder; for exmaple purpose we will this folder e.g. C:\Projects
+3. Create a local working folder (if not available); for example purpose we will use working folder "Projects" e.g. C:\Projects
 
 4. Open a Windows Command line program; change directory to intended C:\Projects folder - > cd C:\Projects
 
-5. From Windows CMD; Copy the Github project repository using Git CMD command line> C:\Projects> git clone https://github.com/alexilie/jomo-metamodel-web.git
+5. From Windows CMD; Copy the Github "jomo-metamodel-web" project repository using Git "clone" command > C:\Projects> git clone https://github.com/alexilie/jomo-metamodel-web.git
 ## Git Clone command  - copy repository | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-2.PNG "Screen 2")
 
-6. After "Git clone" command is executed, a ew folder "jomo-metamodel-web" will be automatically created in the working "Projects" folder
+6. After "Git clone" command is executed, a new folder "jomo-metamodel-web" will be automatically created in the working "Projects" folder
+
 7. Change directory to the new created folder "jomo-metamodel-web" > cd jomo-metamodel-web
 
 * Observation - GitHub repository can be downloaded as ZIP archive as well; or can be downloaded using GitHub desktop or any other Git Client 
 
-8. Build application from Windows CMD line: from project folder execute Maven build  "mvn clean install" command-  C:\Projects\jomo-metamodel-web > mvn clean install
+8. Build "jomo-metamodel-web" project by executing Maven build "mvn clean install" command-  C:\Projects\jomo-metamodel-web > mvn clean install
 
-* Observation - Build application from Intellij - start IntelliJ, Open Project from "jomo-metamodel-web" folder, open terminal, or launch the build using Maven from inside IntelliJ
+* Observation - you can open the "jomo-metamodel-web" project in Intellij - start IntelliJ, Open Project from "jomo-metamodel-web" folder, 
+then alternatively you can build the "jomo-metamodel-web" project from inside Intellij CMD Terminal window, or launch the build using Maven build task 
 
 
 ## Maven build command | screen
@@ -93,19 +95,20 @@ Github Trackzilla Application URL = TO DO
 ## Maven build command | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-5.PNG "Screen 5")
 
-9. Opne IntelliJ IDE (if not done yet) and open Project from following location C:\Projects\jomo-metamodel-web > mvn clean install
+9. Open IntelliJ IDE (if not done yet)
+   open Project from following location C:\Projects\jomo-metamodel-web > mvn clean install
 ## IntelliJ IDE jomo-metamodel-web App | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-7.PNG "Screen 7")
 
-8. Maven build script will generate auto-executable JAR Java archive in the target subfolder -  jomo-metamodel-web-app-0.0.1-SNAPSHOT
+8. Maven build  will generate auto-executable "jomo-metamodel-web-app-0.0.1-SNAPSHOT" JAR Java archive in the "target" build subfolder
 ## Maven build artifacts in target folder  | screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-6.PNG "Screen 6")
 
 ## Running the Spring-boot jomo-metamodel-web as Web App inside Tomcat App server
 #### On Windows
 
-9. To execute from Windows CMD line or IntelliJ Terminal command window: > mvn spring-boot:run 
-you can use any Maven commands 
+9. To execute from Windows CMD line or IntelliJ Terminal command window use Maven run command: > mvn spring-boot:run 
+you can use any of the the Maven commands 
 ```
 C:\Projects\jomo-metamodel-web > mvn spring-boot:run
 
@@ -116,7 +119,8 @@ C:\Projects\jomo-metamodel-web > java -jar target/jomo-metamodel-web-app-0.0.1-S
 C:\Projects\jomo-metamodel-web\target > java -jar jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar 
 ```
 
-the Mavn command "mvn spring-boot:run" will start Tomcat App Server on port 8080, then will deploy the jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar JAR in the Tomcat embedded server
+the Maven command "mvn spring-boot:run" will start Tomcat App Server on (default) port 8080, 
+then will deploy the "jomo-metamodel-web-app-0.0.1-SNAPSHOT.jar" JAR in the Tomcat embedded server
 
 ## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-8.PNG "Screen 8")
@@ -127,7 +131,7 @@ the Mavn command "mvn spring-boot:run" will start Tomcat App Server on port 8080
 ## Maven command to run and execute the application | screen 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-11.PNG "Screen 11")
 
-## Accessing the Metamodel Web application in the browser | screen
+## Runnning the Jomo Metamodel Web application in the browser | screen
 http://localhost:8080/
 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-12.PNG "Screen 12")
@@ -138,7 +142,7 @@ http://localhost:8080/
 
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-15.PNG "Screen 15")
 
-## Accessing the App, App Resources & REST API resources | screen
+## Accessing the Metamodel App, App Resources & REST API resources | screen
 | Resource        |  URL         	                                     |          |
 |------------------------------------------------------------------------|----------|---------- |
 | App Home         | http://localhost:8080                               | 
@@ -153,20 +157,21 @@ http://localhost:8080/
 | Releases API     | http://localhost:8080/api/v1/metamodel/releases     |   
 | Metadatas API    | http://localhost:8080/api/v1/metamodel/metadatas    |   
 
-## Metamodel Application | PostgreSQL Database configuration - | screen
-* Observation - For PostGreSQL; database must be created, user must be created and password must be setup; user permission must be setup as well - READ, WRITE 
-* Observation - Datasource configured and can be changed from application.yml config file 
+## Metamodel Application | PostgreSQL Database configuration
+* Observation - For PostGreSQL; database "eorganism" must be created, user must be created and password must be setup; 
+database user permission must be setup as well - READ, WRITE 
+* Observation - Datasource configured  can be changed from application.yml config file 
 
 Database:    eorganism_web
 DB user:     eorganism_web
 DB password: alex1900 
-DB port:     5555 
+DB port:     5432 
 DB host:     localhost
-Dn Driver:  
+DB Driver:   org.postgresql.Driver
 
 | JDBC URL                                      | Username         	| Password         |
 |----------------------------------------------	|------------------	|----------------- |
-| jdbc:postgresql://localhost:5555/eorganism_web| eorganism_web     | alex1900 |
+| jdbc:postgresql://localhost:5432/eorganism_web| eorganism_web     | alex1900         |
 
 
 ## PostgreSQL Database configuration |  Screens
@@ -177,19 +182,28 @@ Dn Driver:
 ## PostgreSQL Database ERD Model |  Screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-19.png "Screen 19")
 
+## H2 Database configuration - | Java Database in memory DB 
+* Observation - For H2 Java DB; database will be automatically created, default; no port sholud be configured;
+no user and no password is required
 
-## Metamodel Application | H2 Java DB (in memory DB) | Database configuration - | screen
-* Observation - For H2 Java DB; database will be automatically created, default
-Database:    
-DB user:     
+Database:    eorganism_web
+DB user:     eorganism_web
 DB password:  
-DB port:      
+DB port:     
 DB host:     localhost
-Dn Driver:  
+DB Driver:   org.h2.Driver
 
 | JDBC URL                                      | Username         	| Password         |
 |----------------------------------------------	|------------------	|----------------- |
-| jdbc:h2://localhost:xxxx/default              |                   |                  |
+| jdbc:h2:mem:eorganism_web                     |                   |                  |
+
+## H2 Database configuration - | Java in memory DB | Screen
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
+
+## H2 Database Console | Screen
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-35.PNG "Screen 35")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-37.PNG "Screen 37")
 
 ## Accessing the REST API GET operations | directly in the browser | screens
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-20.PNG "Screen 20")
@@ -198,6 +212,7 @@ Dn Driver:
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-23.PNG "Screen 23")\
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-24.PNG "Screen 24")
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-25.PNG "Screen 25")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-35.PNG "Screen 35")
 
 ## Swagger UI | screen
 Swagger UI - http://localhost:8080/swagger-ui/index.html
@@ -211,7 +226,6 @@ Actuator Health Info - http://localhost:8080/actuator
 OpenAPI 3.0 YAML specification | from app - http://localhost:8080/v3/api-docs
 OpenAPI 3.0 YAML specification | remote- https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/api-docs.yaml
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-27.PNG "Screen 27")
-
 
 ## REST API GET | using CURL  Windows CMD line
 REST API - CURL from CMD Command line - getting all - http://localhost:8080/api/v1/metamodel/metadatas

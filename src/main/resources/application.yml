@@ -3,8 +3,8 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:metamodel-db
-    jdbcUrl: jdbc:h2:mem:metamodel-db
+    url: jdbc:h2:mem:eorganism_web
+    jdbcUrl: jdbc:h2:mem:eorganism_web
     driverClassName: org.h2.Driver
   h2:
     console:
