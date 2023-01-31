@@ -6,6 +6,26 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            <!-- Domains-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDomMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Domains
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDomMenuLink">
+                    <a class="dropdown-item" href="/domains">View Domains</a>
+                    <a class="dropdown-item" href="/domains/new">Add Domain</a>
+                </div>
+            </li>
+            <!-- Systems-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarSysMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Systems
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarSysMenuLink">
+                    <a class="dropdown-item" href="/systems">View Systems</a>
+                    <a class="dropdown-item" href="/systems/new">Create System</a>
+                </div>
+            </li>
             <!-- Applications-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarAppMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,24 +59,48 @@
                     <a class="dropdown-item" href="/databases/search">Search Database</a>
                 </div>
             </li>
-            <!-- Domains-->
+            <!-- Services-->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDomMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Domains
+                <a class="nav-link dropdown-toggle" href="#" id="navbarSerMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDomMenuLink">
-                    <a class="dropdown-item" href="/domains">View</a>
-                    <a class="dropdown-item" href="/domains/new">Create</a>
+                <div class="dropdown-menu" aria-labelledby="navbarSerMenuLink">
+                    <a class="dropdown-item" href="/services">Services</a>
+                    <a class="dropdown-item" href="/services/add">Add Service</a>
+                    <a class="dropdown-item" href="/services/search">Search Service</a>
                 </div>
             </li>
-            <!-- Systems-->
+            <!-- Interfaces-->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarSysMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Systems
+                <a class="nav-link dropdown-toggle" href="#" id="navbarIntMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Interfaces
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarSysMenuLink">
-                    <a class="dropdown-item" href="/systems">View</a>
-                    <a class="dropdown-item" href="/systems/new">Create</a>
+                <div class="dropdown-menu" aria-labelledby="navbarIntMenuLink">
+                    <a class="dropdown-item" href="/interfaces">Interfaces</a>
+                    <a class="dropdown-item" href="/interfaces/add">Add Interface</a>
+                    <a class="dropdown-item" href="/interfaces/search">Search Interface</a>
+                </div>
+            </li>
+            <!-- Objects-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarObjMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Objects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarObjMenuLink">
+                    <a class="dropdown-item" href="/objects">Objects</a>
+                    <a class="dropdown-item" href="/objects/add">Add Object</a>
+                    <a class="dropdown-item" href="/objects/search">Search Object</a>
+                </div>
+            </li>
+            <!-- Operations-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarOpsMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Operations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarOpsMenuLink">
+                    <a class="dropdown-item" href="/operations">Operations</a>
+                    <a class="dropdown-item" href="/operations/add">Add Operation</a>
+                    <a class="dropdown-item" href="/operations/search">Search Operation</a>
                 </div>
             </li>
             <!-- Releases-->
@@ -79,42 +123,7 @@
                     <a class="dropdown-item" href="/environments/new">Create</a>
                 </div>
             </li>
-            <!-- Services-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarSerMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Services
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarSerMenuLink">
-                    <a class="dropdown-item" href="/service">Services</a>
-                </div>
-            </li>
-            <!-- Interfaces-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarIntMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Interfaces
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarIntMenuLink">
-                    <a class="dropdown-item" href="/interfaces">Interfaces</a>
-                </div>
-            </li>
-            <!-- Objects-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarObjMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Objects
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarObjMenuLink">
-                    <a class="dropdown-item" href="/objects">Objects</a>
-                </div>
-            </li>
-            <!-- Operations-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarOpsMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Operations
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarOpsMenuLink">
-                    <a class="dropdown-item" href="/operations">Operations</a>
-                </div>
-            </li>
+
             <!-- Atoms-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarAtmMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,6 +131,16 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarAtmMenuLink">
                     <a class="dropdown-item" href="/atoms">Atoms</a>
+                </div>
+            </li>
+
+            <!-- Documentation-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDocMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Documentation
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDocMenuLink">
+                    <a class="dropdown-item" href="/documentation">Documentation</a>
                 </div>
             </li>
             <!-- Metadata-->
@@ -132,15 +151,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarMetMenuLink">
                     <a class="dropdown-item" href="/metadatas">View</a>
                     <a class="dropdown-item" href="/metadatas/new">Create</a>
-                </div>
-            </li>
-            <!-- Documentation-->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDocMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Documentation
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDocMenuLink">
-                    <a class="dropdown-item" href="/documentation">Documentation</a>
                 </div>
             </li>
         </ul>

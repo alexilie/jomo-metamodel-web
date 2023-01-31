@@ -26,6 +26,8 @@ import com.jomo.eorganism.metamodel.web.service.EnvironmentService;
 import com.jomo.eorganism.metamodel.web.service.MetadataService;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,8 @@ import java.util.List;
 @RequestMapping("api/v1/metamodel")
 @AllArgsConstructor
 public class MetamodelWebRestController {
+    private static final Logger log = LoggerFactory.getLogger(MetamodelWebRestController.class);
+
     private ApplicationService applicationService;
     private DatabaseService databaseService;
     private ComponentService componentService;

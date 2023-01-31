@@ -66,11 +66,18 @@ public class DatabaseEntity extends AtomEntity {
     private String version;
 
     public DatabaseEntity() {
-        super();
+        setName("db name");
+        setType("db type");
+        setDescription("db description");
+        setMetadataType("DATABASE");
+        setShortName("DB Short name");
+        setLongName("DB  Long Name");
     }
 
     public DatabaseEntity(String name, String type, String description) {
-        super(name,type,description);
+        setName(name);
+        setType(type);
+        setDescription(description);
         setMetadataType("DATABASE");
         setShortName(name);
         setLongName(name);

@@ -101,11 +101,18 @@ public class MetadataEntity extends AtomEntity  {
     }
 
     public MetadataEntity() {
-        super();
+        setName("meta name");
+        setType("meta type");
+        setDescription("meta description");
+        setMetadataType("METADATA");
+        setShortName("meta Short name");
+        setLongName("meta Long Name");
     }
 
     public MetadataEntity(String name, String type, String description) {
-        super(name,type,description);
+        setName(name);
+        setType(type);
+        setDescription(description);
         setMetadataType("METADATA");
         setShortName(name);
         setLongName(name);

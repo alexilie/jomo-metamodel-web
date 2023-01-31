@@ -113,12 +113,19 @@ public class ComponentEntity extends AtomEntity {
     }
 
     public ComponentEntity() {
-        super();
+        setName("comp name");
+        setType("comp type");
+        setDescription("comp description");
+        setMetadataType("COMPONENT");
+        setShortName("comp Short name");
+        setLongName("comp Long Name");
     }
 
     public ComponentEntity(String name, String type, String description) {
-        super(name,type,description);
-        setMetadataType("COMPONENT");
+        setName(name);
+        setType(type);
+        setDescription(description);
+        setMetadataType("APPLICATION");
         setShortName(name);
         setLongName(name);
     }

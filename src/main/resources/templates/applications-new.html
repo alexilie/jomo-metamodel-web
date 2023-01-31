@@ -13,7 +13,7 @@
 
     <div class="jumbotron">
         <h3>Add New Application</h3>
-            <form class="form-inline my-2 my-lg-0" action="/applications" th:object="${application}" method="post">
+            <form class="form-inline my-2 my-lg-0" action="#" th:action="@{/applications}" th:object="${application}" method="post">
                     <table class="table table-striped">
                         <thead class="thead-dark">
                             <tr>
@@ -67,17 +67,6 @@
                                          <i>Short Description  ... </i>
                                      </td>
                                  </tr>
-                                <tr>
-                                    <td>
-                                        Long Description
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control mr-sm-2" id="description" placeholder="Enter Description" aria-label="input text">
-                                    </td>
-                                    <td>
-                                        <i>Long Description  ... </i>
-                                    </td>
-                                </tr>
                                  <tr>
                                      <td>
                                          Domain

@@ -18,11 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -82,7 +78,9 @@ public class MetamodelWebController {
     }
 
     @GetMapping("/applications-new")
-    public String showAddNewAppForm(Model model){
+    public String addNewApplication(Model model){
+        ApplicationEntity  applicationEntity = new ApplicationEntity();
+        model.addAttribute("application", applicationEntity);
         return "applications-new";
     }
 
@@ -99,27 +97,47 @@ public class MetamodelWebController {
     }
 
     @PostMapping("/applications")
-    public String addApplication(Model model, BindingResult result, ApplicationEntity applicationEntity){
+    public String addApplication(Model model, ApplicationEntity applicationEntity){
         model.addAttribute("application", applicationEntity);
         log.info("addApplication - " + applicationEntity.toString());
+        ApplicationEntity addApplication = new ApplicationEntity();
 
-        applicationService.addApplication(applicationEntity);
+        try{
+            addApplication = applicationService.addApplication(applicationEntity);
+        }catch(Exception e){
+            log.info("addApplication FAILED exception: - " + e.toString());
+            return "errors";
+        }
+
+
+        if (addApplication == null) {
+            log.info("addApplication FAILED - ");
+            return "errors";
+        }
+
+        log.info("addApplication SUCCESS - ");
         return "applications";
     }
 
     @PostMapping("/applications/{id}")
-    public String updateApplication(Model model, BindingResult result, @PathVariable("id") Integer id,  ApplicationEntity applicationEntity){
+    public String updateApplicationAdd( @PathVariable("id") Integer id, Model model, ApplicationEntity applicationEntity){
         model.addAttribute("application", applicationEntity);
         log.info("updateApplication - " + applicationEntity.toString());
         applicationEntity.setId(id);
-
-        final ApplicationEntity updatedApplication = applicationService.updateById(id, applicationEntity);
+        ApplicationEntity updatedApplication = new ApplicationEntity();
+        try{
+            updatedApplication = applicationService.updateById(id, applicationEntity);
+        }catch(Exception e){
+            log.info("updateApplication FAILED exception: - " + e.toString());
+            return "errors";
+        }
 
         if (updatedApplication == null) {
+            log.info("updateApplication FAILED - ");
+            return "errors";
+        } else {
             log.info("updateApplication SUCCESS - ");
             return "applications";
-        } else {
-            return "errors";
         }
     }
 
@@ -127,6 +145,14 @@ public class MetamodelWebController {
     public String deleteApplication(@PathVariable("id") Integer id){
         log.info("deleteApplication id - " + id);
         applicationService.deleteById(id);
+
+        try{
+            applicationService.deleteById(id);
+        }catch(Exception e){
+            log.info("deleteApplication FAILED exception: - " + e.toString());
+            return "errors";
+        }
+
         return "applications";
     }
 
@@ -154,6 +180,7 @@ public class MetamodelWebController {
         model.addAttribute("systems", systemService.listSystems());
         return "systems";
     }
+
     @GetMapping("/releases")
     public String retrieveReleases(Model model){
         model.addAttribute("releases", releaseService.listReleases());
@@ -179,5 +206,10 @@ public class MetamodelWebController {
     @GetMapping("/documentation")
     public String retrieveDocumentation(){
         return "documentation";
+    }
+
+    @GetMapping("/errors")
+    public String retrieveErrors(){
+        return "errors";
     }
 }

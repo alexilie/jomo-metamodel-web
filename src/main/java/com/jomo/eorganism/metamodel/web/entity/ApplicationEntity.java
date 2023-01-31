@@ -193,11 +193,18 @@ public class ApplicationEntity extends AtomEntity {
     }
 
     public ApplicationEntity() {
-        super();
+        setName("app name");
+        setType("app type");
+        setDescription("app description");
+        setMetadataType("APPLICATION");
+        setShortName("app Short name");
+        setLongName("app Long Name");
     }
 
     public ApplicationEntity(String name, String type, String description) {
-        super(name,type,description);
+        setName(name);
+        setType(type);
+        setDescription(description);
         setMetadataType("APPLICATION");
         setShortName(name);
         setLongName(name);
