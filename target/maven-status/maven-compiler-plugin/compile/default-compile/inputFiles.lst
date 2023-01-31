@@ -32,6 +32,7 @@ C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\exception\ReleaseNotFoundException.java
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\repository\DatabaseRepository.java
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\service\DomainService.java
+C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\entity\AtomEntity.java
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\config\PersistenceConfig.java
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\entity\ApplicationEntity.java
 C:\Projects\GitHub\jomo-metamodel-web\src\main\java\com\jomo\eorganism\metamodel\web\service\ReleaseServiceImpl.java

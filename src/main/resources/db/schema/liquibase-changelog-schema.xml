@@ -398,6 +398,10 @@
 			</column>
 			<column name="original_uuid" type="VARCHAR(150)">
 			</column>
+			<column name="eorganism_id" type="INT">
+			</column>
+			<column name="eorganism_name" type="VARCHAR(100)">
+			</column>
 			<column name="last_updated_user_id" type="INT">
 			</column>
 			<column name="last_updated_application_id" type="INT">
@@ -424,6 +428,11 @@
 			<column name="code" type="VARCHAR(100)">
 			</column>
 			<column name="classification" type="VARCHAR(100)">
+			</column>
+
+			<column name="metadata_name" type="VARCHAR(100)">
+			</column>
+			<column name="metadata_type" type="VARCHAR(100)">
 			</column>
 
 			<column name="owner_name" type="VARCHAR(100)">

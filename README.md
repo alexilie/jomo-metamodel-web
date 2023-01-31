@@ -206,7 +206,7 @@ DB Driver:   org.h2.Driver
 ## H2 Database configuration - | Java in memory DB | Screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
 
-![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-31.PNG "Screen 31")
+![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-32.PNG "Screen 32")
 
 ## H2 Database Console | Screen
 ![alt text](https://main.d37vqs13py7d1c.amplifyapp.com/images/metamodel/jomo-metamodel-web-img-35.PNG "Screen 35")

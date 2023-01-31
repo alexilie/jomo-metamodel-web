@@ -97,7 +97,8 @@ public class MetamodelWebApplication {
 						applicationEntityWorker.setGraphPath("ORGANIZATION >> COMPANY >> BUSINESS UNIT >> WEALTH"+ "ONE:" + i);
 						applicationEntityWorker.setServiceCode("ServiceCode "+ "ONE:" + i);
 						applicationEntityWorker.setBusinessUnitName("BusinessUnitName "+ "ONE:" + i);
-   						componentEntityWorker = new ComponentEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Web GUI Admin component" + "ONE:" + i);
+
+						componentEntityWorker = new ComponentEntity("Jomo Metamodel Web" + "ONE:" + i, "Defect Tracking" + "ONE:" + i, "Jomo Metamodel Web GUI Admin component" + "ONE:" + i);
 						databaseEntityWorker = new DatabaseEntity("Jomo Metamodel Database" + "ONE:" + i, "Oracle Cloud" + "ONE:" + i, "Jomo Metamodel Database" + "ONE:" + i);
 						domainEntityWorker = new DomainEntity("Billing Domain", "Billing" + "ONE:" + i, "Business Banking Billing Domain" + "ONE:" + i);
 						systemEntityWorker = new SystemEntity("CRM", "Critical" + "ONE:" + i, "CRM Customer Relationship System" + "ONE:" + i);

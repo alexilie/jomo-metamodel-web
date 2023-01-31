@@ -4,6 +4,7 @@ com\jomo\eorganism\metamodel\web\util\TransactionalReadOnly.class
 com\jomo\eorganism\metamodel\web\entity\EnvironmentEntity.class
 com\jomo\eorganism\metamodel\web\service\DomainService.class
 com\jomo\eorganism\metamodel\web\exception\SystemNotFoundException.class
+com\jomo\eorganism\metamodel\web\entity\AtomEntity.class
 com\jomo\eorganism\metamodel\web\exception\MetadataNotFoundException.class
 com\jomo\eorganism\metamodel\web\exception\DatabaseNotFoundException.class
 com\jomo\eorganism\metamodel\web\service\ComponentService.class

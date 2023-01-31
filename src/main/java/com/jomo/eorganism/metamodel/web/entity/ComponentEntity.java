@@ -15,50 +15,22 @@ import com.jomo.eorganism.metamodel.web.util.MetamodelUtil;
 //@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 //@Setter
-public class ComponentEntity extends BaseEntity {
+public class ComponentEntity extends AtomEntity {
 
-    private String uuid;
     private Integer applicationId;
-    private Integer eorganismId;
-    private Integer metadataId;
-    private Integer lastUpdatedUserId;
-    private Integer lastUpdatedApplicationId;
-
     private String applicationName;
 
-    private String name;
-    private String type;
-    private String description;
     private String status;
-    private String inventoryName;
-    private String shortName;
-    private String longName;
     private String code;
     private String classification;
 
-    private String eorganismName;
     private String taxonomy;
     private String topology;
     private String graphPath;
 
-    private String metadataName;
-    private String metadataType;
     private String serviceCode;
     private String version;
 
-    private String lastUpdatedUserName;
-    private String lastUpdatedApplicationName;
-
-    private Date createdDate;
-    private Date lastUpdatedDate;
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public Date getLastUpdatedDate() {
-        return lastUpdatedDate;
-    }
 
     public Integer getApplicationId() {
         return applicationId;
@@ -68,109 +40,103 @@ public class ComponentEntity extends BaseEntity {
         this.applicationId = applicationId;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public String getApplicationName() {
+        return applicationName;
     }
 
-    public void setLastUpdatedDate(Date lastUpdatedDate) {
-        this.lastUpdatedDate = lastUpdatedDate;
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
     }
 
-    public String getName() {
-        return name;
+    public String getStatus() {
+        return status;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getType() {
-        return type;
+    public String getCode() {
+        return code;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getDescription() {
-        return description;
+    public String getClassification() {
+        return classification;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setClassification(String classification) {
+        this.classification = classification;
     }
 
-    public String getLastUpdatedUserName() {
-        return lastUpdatedUserName;
+    public String getTaxonomy() {
+        return taxonomy;
     }
 
-    public void setLastUpdatedUserName(String lastUpdatedUserName) {
-        this.lastUpdatedUserName = lastUpdatedUserName;
+    public void setTaxonomy(String taxonomy) {
+        this.taxonomy = taxonomy;
     }
 
-    public String getLastUpdatedApplicationName() {
-        return lastUpdatedApplicationName;
+    public String getTopology() {
+        return topology;
     }
 
-    public void setLastUpdatedApplicationName(String lastUpdatedApplicationName) {
-        this.lastUpdatedApplicationName = lastUpdatedApplicationName;
+    public void setTopology(String topology) {
+        this.topology = topology;
     }
 
-    public String getMetadataType() {
-        return metadataType;
+    public String getGraphPath() {
+        return graphPath;
     }
 
-    public void setMetadataType(String metadataType) {
-        this.metadataType = metadataType;
+    public void setGraphPath(String graphPath) {
+        this.graphPath = graphPath;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     public ComponentEntity() {
+        super();
     }
 
     public ComponentEntity(String name, String type, String description) {
-        this.uuid        = MetamodelUtil.getUuidRandomString();
-        this.metadataType = "COMPONENT";
-        this.lastUpdatedApplicationName = "Metamodel Web";
-        this.lastUpdatedUserName = "eorganism";
-        this.name        = name;
-        this.type        = type;
-        this.description = description;
-        this.createdDate = new java.util.Date();
-        this.lastUpdatedDate = new java.util.Date();
+        super(name,type,description);
+        setMetadataType("COMPONENT");
+        setShortName(name);
+        setLongName(name);
     }
 
     @Override
     public String toString() {
-        return "ComponentEntity{" + '\'' +
+        return "ComponentEntity{" +
                 super.toString() + '\'' +
-                "uuid=" + uuid +
-                "applicationId=" + applicationId +
-                ", eorganismId=" + eorganismId +
-                ", metadataId=" + metadataId +
-                ", lastUpdatedUserId=" + lastUpdatedUserId +
-                ", lastUpdatedApplicationId=" + lastUpdatedApplicationId +
+                ", applicationId=" + applicationId +
                 ", applicationName='" + applicationName + '\'' +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
-                ", inventoryName='" + inventoryName + '\'' +
-                ", shortName='" + shortName + '\'' +
-                ", longName='" + longName + '\'' +
                 ", code='" + code + '\'' +
                 ", classification='" + classification + '\'' +
-                ", eorganismName=" + eorganismName +
                 ", taxonomy='" + taxonomy + '\'' +
                 ", topology='" + topology + '\'' +
                 ", graphPath='" + graphPath + '\'' +
-                ", metadataName='" + metadataName + '\'' +
-                ", metadataType='" + metadataType + '\'' +
                 ", serviceCode='" + serviceCode + '\'' +
                 ", version='" + version + '\'' +
-                ", lastUpdatedUserName='" + lastUpdatedUserName + '\'' +
-                ", lastUpdatedApplicationName='" + lastUpdatedApplicationName + '\'' +
-                ", createdDate=" + createdDate +
-                ", lastUpdatedDate=" + lastUpdatedDate +
                 '}';
     }
 }

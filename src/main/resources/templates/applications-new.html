@@ -17,54 +17,268 @@
                     <table class="table table-striped">
                         <thead class="thead-dark">
                             <tr>
+                                <th scope="col">Attribute</th>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
+                                <th scope="col">Attribute Description</th>
                            </tr>
                         </thead>
                         <tbody>
-                                 <tr>
-                                    <td>Application Name</td>
-                                    <td><input type="text"  class="form-control mr-sm-2" id="name" placeholder="Enter Name" aria-label="input text"></td>
+                                <tr>
+                                    <td>
+                                        Application Name
+                                    </td>
+                                    <td>
+                                        <input type="text"  class="form-control mr-sm-2" id="name" placeholder="Enter Name" aria-label="input text">
+                                    </td>
+                                    <td>
+                                        <i>Name of the application </i>
+                                    </td>
                                 </tr>
                                  <tr>
-                                     <td>Application Type</td>
-                                     <td><input type="text" class="form-control mr-sm-2" id="type" placeholder="Enter Type" aria-label="input text"></td>
+                                     <td>
+                                         Application Type
+                                     </td>
+                                     <td>
+                                             <select id="type" class="form-control mr-sm-2">
+                                                 <option value="Not Available">Not Available</option>
+                                                 <option value="Mobile">Mobile</option>
+                                                 <option value="Web">Web</option>
+                                                 <option value="Consumer">Consumer</option>
+                                                 <option value="Business">Business</option>
+                                                 <option value="Reporting">Reporting</option>
+                                                 <option value="API Web Services">API Web Services</option>
+                                                 <option value="API REST">API REST</option>
+                                                 <option value="API Microservices">API Microservices"</option>
+                                                 <option value="Middleware">Middleware"</option>
+                                             </select>
+                                     </td>
+                                     <td>
+                                         <i>Application type with ... </i>
+                                     </td>
                                  </tr>
                                  <tr>
-                                     <td>Application Description</td>
-                                     <td><input type="text" class="form-control mr-sm-2" id="description" placeholder="Enter Description" aria-label="input text"></td>
+                                     <td>
+                                         Short Description
+                                     </td>
+                                     <td>
+                                         <input type="text" class="form-control mr-sm-2" id="description" placeholder="Enter Description" aria-label="input text">
+                                     </td>
+                                     <td>
+                                         <i>Short Description  ... </i>
+                                     </td>
+                                 </tr>
+                                <tr>
+                                    <td>
+                                        Long Description
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control mr-sm-2" id="description" placeholder="Enter Description" aria-label="input text">
+                                    </td>
+                                    <td>
+                                        <i>Long Description  ... </i>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                     <td>
+                                         Domain
+                                     </td>
+                                     <td>
+                                        <select id="domain" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="CRM">CRM</option>
+                                             <option value="Digital">Digital</option>
+                                             <option value="Web Channels">Web Channels</option>
+                                             <option value="Call Center Applications">Call Center Applications</option>
+                                             <option value="Channels Applications">Channels Applications</option>
+                                             <option value="Onboarding Applications">Onboarding Applications</option>
+                                             <option value="Supply Chain">Supply Chain</option>
+                                             <option value="Fullfilment">Fullfilment</option>
+                                             <option value="Card Domain">Card Domain</option>
+                                             <option value="Reporting">Reporting</option>
+                                             <option value="Data Warehouse">Data Warehouse</option>
+                                             <option value="Middleware Applications">Middleware Applications</option>
+                                             <option value="Security Applications">Security Applications</option>
+                                             <option value="Notification Applications">Notification Applications</option>
+                                        </select>
+                                     </td>
+                                     <td>
+                                         <i>Domain represents  ... </i>
+                                     </td>
                                  </tr>
                                  <tr>
-                                     <td>Domain</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="domainName" placeholder="Enter Domain" aria-label="input text"></td>
+                                     <td>
+                                         System
+                                     </td>
+                                     <td>
+                                         <select id="system" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="SalesForce">SalesForce</option>
+                                             <option value="IVR">IVR</option>
+                                             <option value="Product Catalog">Product Catalog</option>
+                                             <option value="CRM">CRM</option>
+                                             <option value="Identity Management">Identity Management</option>
+                                             <option value="Customer Information Framework">Customer Information Framework</option>
+                                             <option value="Enterprise Security Framework">Enterprise Security Framework</option>
+                                             <option value="Enterprise Notification Framework">Enterprise Notification Framework</option>
+                                             <option value="Middleware">Middleware</option>
+                                             <option value="API">API</option>
+                                             <option value="Personal Banking">Personal Banking - BOR</option>
+                                             <option value="Credit Card Banking">Credit Card Banking - BOR</option>
+                                             <option value="Payments">Payments</option>
+                                             <option value="Investment Banking">Investment Banking</option>
+                                             <option value="Wealth">Wealth</option>
+                                             <option value="Trading">Trading</option>
+                                             <option value="Finance">Finance</option>
+                                             <option value="Audit">Audit</option>
+                                             <option value="Governance">Governance</option>
+                                             <option value="AML">AML</option>
+                                             <option value="HR">HR</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>System means a large area capability that is delivered, usually a significant Business Unit...</i>
+                                     </td>
                                  </tr>
                                  <tr>
-                                     <td>System</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="systemName" placeholder="Enter System" aria-label="input text"></td>
+                                     <td>
+                                         Release
+                                     </td>
+                                     <td>
+                                         <select id="release" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="R113">R113</option>
+                                             <option value="R513">R513</option>
+                                             <option value="R913">R913</option>
+                                             <option value="R1113">R1113</option>
+                                             <option value="R114">R114</option>
+                                             <option value="R514">R514</option>
+                                             <option value="R914">R914</option>
+                                             <option value="R1114">R1114</option>
+                                             <option value="R115">R115</option>
+                                             <option value="R515">R515</option>
+                                             <option value="R915">R915</option>
+                                             <option value="R1115">R1115</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>Release versus the Enterprise Release Calendar  </i>
+                                     </td>
+
                                  </tr>
                                  <tr>
-                                     <td>Release</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="releaseName" placeholder="Enter Release" aria-label="input text"></td>
-                                 </tr>
-                                 <tr>
-                                     <td>Environment</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="environmentName" placeholder="Enter Environment" aria-label="input text"></td>
+                                     <td>
+                                         Environment
+                                     </td>
+                                     <td>
+                                         <select id="environment" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="PROD">PRODUCTION</option>
+                                             <option value="DR">Disaster Recovery</option>
+                                             <option value="BCD">Business Continuity</option>
+                                             <option value="ENV-DIT-1">ENV-DIT-1</option>
+                                             <option value="ENV-DIT-2">ENV-DIT-2</option>
+                                             <option value="ENV-DIT-3">ENV-DIT-3</option>
+                                             <option value="ENV-DIT-4">ENV-DIT-4</option>
+                                             <option value="ENV-DIT-5">ENV-DIT-5</option>
+                                             <option value="ENV-DIT-6">ENV-DIT-6</option>
+                                             <option value="ENV-DIT-7">ENV-DIT-7</option>
+                                             <option value="ENV-DIT-8">ENV-DIT-8</option>
+                                             <option value="ENV-DIT-9">ENV-DIT-9</option>
+                                             <option value="ENV-DIT-10">ENV-DIT-10</option>
+                                             <option value="ENV-DIT-11">ENV-DIT-11</option>
+                                             <option value="ENV-DIT-12">ENV-DIT-12</option>
+                                             <option value="ENV-QA-R113">ENV-QA-R113</option>
+                                             <option value="ENV-QA-R513">ENV-QA-R513</option>
+                                             <option value="ENV-QA-R913">ENV-QA-R913</option>
+                                             <option value="ENV-QA-R1113">ENV-QA-R1113</option>
+                                             <option value="ENV-QA-R114">ENV-QA-R114</option>
+                                             <option value="ENV-QA-R514">ENV-QA-R514</option>
+                                             <option value="ENV-QA-R914">ENV-QA-R914</option>
+                                             <option value="ENV-QA-R1114">ENV-QA-R1114</option>
+                                             <option value="ENV-QA-R115">ENV-QA-R115</option>
+                                             <option value="ENV-QA-R515">ENV-QA-R515</option>
+                                             <option value="ENV-QA-R915">ENV-QA-R915</option>
+                                             <option value="ENV-QA-R1115">ENV-QA-R1115</option>
+                                             <option value="ENV-SIT-R113">ENV-SIT-R113</option>
+                                             <option value="ENV-SIT-R513">ENV-SIT-R513</option>
+                                             <option value="ENV-SIT-R913">ENV-SIT-R913</option>
+                                             <option value="ENV-SIT-R1113">ENV-SIT-R1113</option>
+                                             <option value="ENV-SIT-R114">ENV-SIT-R114</option>
+                                             <option value="ENV-SIT-R514">ENV-SIT-R514</option>
+                                             <option value="ENV-SIT-R914">ENV-SIT-R914</option>
+                                             <option value="ENV-SIT-R1114">ENV-SIT-R1114</option>
+                                             <option value="ENV-SIT-R115">ENV-SIT-R115</option>
+                                             <option value="ENV-SIT-R515">ENV-SIT-R515</option>
+                                             <option value="ENV-SIT-R915">ENV-SIT-R915</option>
+                                             <option value="ENV-SIT-R1115">ENV-SIT-R1115</option>
+                                             <option value="ENV-PT-1">ENV-PT-1</option>
+                                             <option value="ENV-PT-2">ENV-PT-2</option>
+                                             <option value="ENV-PT-3">ENV-PT-3</option>
+                                             <option value="ENV-PT-4">ENV-PT-4</option>
+                                             <option value="ENV-PT-5">ENV-PT-5</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>Environment explanations...</i>
+                                     </td>
                                  </tr>
                                  <tr>
                                      <td>Segment</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="segmentName" placeholder="Enter Segment" aria-label="input text"></td>
+                                     <td>
+                                         <select id="segment" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="FRONT-END">FRONT-END</option>
+                                             <option value="BACK-END">BACK-END</option>
+                                             <option value="THIRD-PARTY">THIRD-PARTY</option>
+                                             <option value="MIDDLEWARE">MIDDLEWARE</option>
+                                             <option value="DATA WAREHOUSE">DATA WAREHOUSE</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>Segment explanations... </i>
+                                     </td>
                                  </tr>
                                  <tr>
-                                     <td>Version</td>
-                                     <td><input type="text" class="form-control mr-sm-2" id="version" placeholder="Enter Version" aria-label="input text"></td>
+                                     <td>
+                                         Version
+                                     </td>
+                                     <td>
+                                         <select id="version" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="FINAL">FINAL</option>
+                                             <option value="INITIAL">INITIAL</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>Version explanations... </i>
+                                     </td>
                                  </tr>
                                  <tr>
-                                     <td>Status</td>
-                                     <td><input type="text"  class="form-control mr-sm-2" id="status" placeholder="Enter Status" aria-label="input text"></td>
+                                     <td>
+                                         Status
+                                     </td>
+                                     <td>
+                                         <select id="status" class="form-control mr-sm-2">
+                                             <option value="Not Available">Not Available</option>
+                                             <option value="ACTIVE">ACTIVE</option>
+                                             <option value="RETIRED">RETIRED</option>
+                                             <option value="TO BE DECOMMISSIONED">TO BE DECOMMISSIONED</option>
+                                             <option value="NOT ACTIVE">NOT ACTIVE</option>
+                                             <option value="IN DEVELOPMENT">IN DEVELOPMENT</option>
+                                             <option value="RETIRED">RETIRED</option>
+                                         </select>
+                                     </td>
+                                     <td>
+                                         <i>Status explanations... </i>
+                                     </td>
                                  </tr>
                                  <tr>
                                      <td></td>
-                                     <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add New</button></td>
+                                     <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Create New App</button></td>
                                  </tr>
                         </tbody>
                     </table>
