@@ -3,7 +3,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <!-- Domains-->
@@ -103,6 +102,18 @@
                     <a class="dropdown-item" href="/operations/search">Search Operation</a>
                 </div>
             </li>
+
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
             <!-- Releases-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarRelMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,6 +162,124 @@
                 <div class="dropdown-menu" aria-labelledby="navbarMetMenuLink">
                     <a class="dropdown-item" href="/metadatas">View</a>
                     <a class="dropdown-item" href="/metadatas/new">Create</a>
+                </div>
+            </li>
+            <!-- Enterprise-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarEntMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Enterprise
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarEntMenuLink">
+                    <a class="dropdown-item" href="/enterprise">View Enterprise</a>
+                </div>
+            </li>
+            <!-- Organization-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarOrgMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Organization
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarOrgMenuLink">
+                    <a class="dropdown-item" href="/organization">View Organizations</a>
+                    <a class="dropdown-item" href="/systems/new">Create Organization</a>
+                </div>
+            </li>
+            <!-- Business Unit-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarBusMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Business Units
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarBusMenuLink">
+                    <a class="dropdown-item" href="/applications">View Business Units</a>
+                    <a class="dropdown-item" href="/applications-new">Add Business Unit</a>
+                    <a class="dropdown-item" href="/applications-search">Search Business Unit</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarBusinessContent">
+        <ul class="navbar-nav mr-auto">
+
+            <!-- Companies-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarCompaMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Companies
+                </a>
+                <div class="dropdown-menu" aria-labelledby="a">
+                    <a class="dropdown-item" href="/components">View Companies</a>
+                    <a class="dropdown-item" href="/components/add">Add Company</a>
+                    <a class="dropdown-item" href="/components/search">Search Company</a>
+                </div>
+            </li>
+            <!-- Capabilities-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarCapMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Capabilities
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarCapMenuLink">
+                    <a class="dropdown-item" href="/databases">View Capabilities</a>
+                    <a class="dropdown-item" href="/databases/add">Add Capability</a>
+                    <a class="dropdown-item" href="/databases/search">Search Capability</a>
+                </div>
+            </li>
+            <!-- Projects-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarPrjMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarPrjMenuLink">
+                    <a class="dropdown-item" href="/services">Projects</a>
+                    <a class="dropdown-item" href="/services/add">Add Project</a>
+                    <a class="dropdown-item" href="/services/search">Search Project</a>
+                </div>
+            </li>
+            <!-- Journey-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarJnrMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Journey
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarJnrMenuLink">
+                    <a class="dropdown-item" href="/interfaces">Journey</a>
+                    <a class="dropdown-item" href="/interfaces/add">Add Journey</a>
+                    <a class="dropdown-item" href="/interfaces/search">Search Journey</a>
+                </div>
+            </li>
+            <!-- Sequence Flow-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarSeqMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Objects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarSeqMenuLink">
+                    <a class="dropdown-item" href="/objects">Sequence Flows</a>
+                    <a class="dropdown-item" href="/objects/add">Add Sequence Flow</a>
+                    <a class="dropdown-item" href="/objects/search">Search Sequence Flow</a>
+                </div>
+            </li>
+            <!-- Persons-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarPerMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Persons
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarPerMenuLink">
+                    <a class="dropdown-item" href="/operations">Persons</a>
+                    <a class="dropdown-item" href="/operations/add">Add Person</a>
+                    <a class="dropdown-item" href="/operations/search">Search Person</a>
+                </div>
+            </li>
+            <!-- Teams-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarTeamMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Teams
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarTeamMenuLink">
+                    <a class="dropdown-item" href="/releases">View Teams</a>
+                    <a class="dropdown-item" href="/releases/new">Create Team</a>
                 </div>
             </li>
         </ul>
