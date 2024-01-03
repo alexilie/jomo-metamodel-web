@@ -162,6 +162,7 @@ Add new application: http://localhost:8080/applications-new
 | Environments API | http://localhost:8080/api/v1/metamodel/environments |   
 | Releases API     | http://localhost:8080/api/v1/metamodel/releases     |   
 | Metadatas API    | http://localhost:8080/api/v1/metamodel/metadatas    |   
+| H2 DB console    | http://localhost:8080/h2-console    |   
 
 ## Metamodel Application | PostgreSQL Database configuration
 * Observation - For PostGreSQL; database "eorganism" must be created, user must be created and password must be setup; 
